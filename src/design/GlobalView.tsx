@@ -18,8 +18,6 @@ const GlobalView = createGlobalStyle`
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  position: relative;
   font-family:'Metal Mania', sans-serif;
 
 };
