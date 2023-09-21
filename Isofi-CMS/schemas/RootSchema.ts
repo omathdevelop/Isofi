@@ -11,13 +11,14 @@ import TermOfServiceSchema from "./TermOfServiceSchema";
 import PrivacyPolicySchema from "./PrivacyPolicySchema";
 import HubSpotFormSchema from "./HubSpotFormSchema";
 import AppUrlSchema from "./AppUrlSchema";
+import SocialMediaAccountSchema from "./SocialMediaAccountSchema";
 // Schema Types Definations -> RootSchema //
 
 export const schemaTypes = [
     NavigationSchema, ContentSchema,
     FirstHeroSchema, SecondHeroSchema,
     SingleColumnSchema, MultipleColumnSchema,
-    ImageSchema, TeamCardSchema, FooterSchema,
+    ImageSchema, TeamCardSchema,HubSpotFormSchema, AppUrlSchema,
+    SocialMediaAccountSchema, FooterSchema,                           
     TermOfServiceSchema, PrivacyPolicySchema,
-    HubSpotFormSchema, AppUrlSchema
 ];

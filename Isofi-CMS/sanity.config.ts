@@ -2,6 +2,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas/RootSchema'
+import { IoAppsSharp } from 'react-icons/io5'
 // import Layout from './@Isofi/customs/components/@Layout';
 // import Isofi from './@Isofi/customs/components/@Logo';
 // import NaviGation from './@Isofi/customs/components/@NaviGation';
@@ -26,7 +27,7 @@ export default defineConfig({
   //   }
   //  },
   //  theme:IsofiStudioThemes,
-  plugins: [deskTool({ name: 'isofiStudio', title: 'Isofi Studio' }), visionTool()],
+  plugins: [deskTool({ name: 'isofiStudio', title: 'Isofi Studio', icon: IoAppsSharp })],
 
   schema: {
     types: schemaTypes,

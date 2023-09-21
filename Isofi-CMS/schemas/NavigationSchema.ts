@@ -74,7 +74,7 @@ const NavigationSchema =  defineType({
         type: 'string',
         description: 'update the "Share Playlist"  button text',
         group: 'buttons',
-        // hidden: ({document}) => !document?.signup
+        hidden: ({document}) => !document?.signup,
         icon: IoShare
   
       }),
