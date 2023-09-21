@@ -1,0 +1,3 @@
+[build]
+  base = "/Isofi-CMS"  
+  publish = "directory-name" 
