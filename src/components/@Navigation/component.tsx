@@ -4,7 +4,6 @@ import { IconView, Menu } from "../../design/@IconView/component";
 import Button from "../@Button/component";
 import Logo from "../@Logo/component";
 import { BUTTON_TYPE_CLASSES } from "../../constants/button";
-import { useNavigate } from "react-router-dom";
 const NaviGation = ({message}:{message:string}) => {
     const onMessage = () => {
         alert(message);
