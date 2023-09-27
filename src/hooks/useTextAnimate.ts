@@ -4,7 +4,8 @@ import type { UseTextAnimate } from "../types/hooks";
 const useTextAnimate = ({selector, text_animate_type, delay, start_delay, duration, repeat, delay_repeat, overlayBackground, ...texts}:UseTextAnimate<string,boolean, number, []>) => { 
          const effectPrefix = 'txt-an-'  
         const onTextAnimate = () => {
-            // eslint-disable-next-line no-undef
+            // eslint-disable-next-line no-undef, @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             new TxtAnime(selector, {
                 effect: `${effectPrefix}${text_animate_type}`,
                 delayStart: start_delay,
