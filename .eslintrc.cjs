@@ -18,7 +18,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'no-unused-vars': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
+    // 'no-unused-vars': process.env.NODE_ENV === 'production' ? 'off' : 'warn',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
