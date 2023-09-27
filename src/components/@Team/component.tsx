@@ -3,7 +3,7 @@ import { HeroImageView } from "../../design/@ImageView/component";
 import { AnyView } from '../../design/@AppView/component';
 import TeamCard from '../@TeamCard/component';
 
-const Team = ({isMobile}:{isMobile:boolean}) => {
+const Team = () => {
    return (<>
    {/* {isMobile  &&  */}
    <HeroImageView setDevice={'mobile'} setHeroImageUrl={BackGroundTexture}>

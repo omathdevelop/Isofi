@@ -1,30 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const DesktopCSS =  css`
-max-width: 100rem;
- padding: 2rem .5rem 2rem .5rem;
- background: var(--theme-bg);
- border: var(--theme-footer-border);
- position: relative;
- top: 0;
- left: 0;
- display: flex;
- justify-content: flex-start;
- align-items: center;
- flex-direction: column;
-
- .logo-with-social{
-width: 100%;
-display: flex;
- justify-content: space-between;
- align-items: center;
- flex-direction: row;
- padding: .25rem;
- }
-  
-
-`
 const FooterView = styled(motion.div)<{setDevice:'destop'}>`
  max-width: 100rem;
  padding: 2rem .5rem 2rem .5rem;

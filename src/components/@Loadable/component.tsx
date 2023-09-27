@@ -1,5 +1,4 @@
 import useTextAnimate from "../../hooks/useTextAnimate";
-import Logo from "../@Logo/component";
 import LoadableView from "../../design/@Loadable/component";
 
 const Loadable = ({isLoaded}:{isLoaded:boolean}) => {
@@ -45,7 +44,7 @@ const Loadable = ({isLoaded}:{isLoaded:boolean}) => {
         </svg>
       </li>
     </ul>
-  </div><span className={'load'} style={{display: 'block'}}>ISOFI</span></div>
+  </div><span className={'load'}>ISOFI</span></div>
         </LoadableView>
     </>
     )
