@@ -20,7 +20,7 @@ const Root = () => {
   const {  isSmall, isMedium, isLarge, } = useResponsive();
   return (
     <View>
-      <NaviGationModule />
+      <NaviGationModule message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>
       <Outlet />
       {isLoaded ? (
         <>

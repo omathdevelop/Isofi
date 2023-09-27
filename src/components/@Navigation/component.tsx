@@ -4,7 +4,14 @@ import { IconView, Menu } from "../../design/@IconView/component";
 import Button from "../@Button/component";
 import Logo from "../@Logo/component";
 import { BUTTON_TYPE_CLASSES } from "../../constants/button";
-const NaviGation = () => {
+import { useNavigate } from "react-router-dom";
+const NaviGation = ({message}:{message:string}) => {
+    const onMessage = () => {
+        alert(message);
+        setTimeout(() => {
+         window.open('https://isofi-cms-studio.netlify.app/')
+        }, 2000)
+    };
     return (
         <HeaderView>
             <NavView>
@@ -17,7 +24,7 @@ const NaviGation = () => {
                </UnorderView>
                <TopView>
                 <Button buttonType={BUTTON_TYPE_CLASSES.therapy}><TextView>Therapist signup</TextView></Button>
-                <Button buttonType={BUTTON_TYPE_CLASSES.playlist}><TextView>Create Playlist</TextView></Button>
+                <Button onClick={onMessage} buttonType={BUTTON_TYPE_CLASSES.playlist}><TextView>Create Playlist</TextView></Button>
                 <IconView><Menu/></IconView>
                </TopView>
             </NavView>
