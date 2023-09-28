@@ -8,6 +8,7 @@ type ButtonProps = {
     buttonType?: BUTTON_TYPE_CLASSES;
     isLoading?: boolean;
     children: React.ReactNode
+    onClick?:React.MouseEventHandler<HTMLButtonElement>
 
 }
 
