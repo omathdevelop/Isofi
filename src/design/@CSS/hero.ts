@@ -66,6 +66,10 @@ const heroTypeTwo = css`
         align-items: center;
         flex-direction: column;
         gap: 1rem;
+        @media (max-width:40rem){
+             margin-top: -2.5rem;
+             margin-left: 4rem;
+        }
         p{
 font-family: Gilroy;
 font-size: 4rem;
@@ -74,7 +78,7 @@ font-weight: 600;
 line-height: normal;
         color: var(--theme-hero-high-light_text);
         @media (max-width: 48rem){
- font-family: Gilroy;
+font-family: Gilroy;
 font-size: 1.625rem;
 font-style: normal;
 font-weight: 600;
