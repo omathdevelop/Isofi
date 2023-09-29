@@ -2,7 +2,10 @@ enum VIEW_ANIMATION {
     JUMP = 'animate__animated animate__bounce',
     FLASHED = 'animate__animated animate__flash',
     PULSE = 'animate__animated animate__pulse',
-    RUBBER_BAND = 'animate__animated animate__rubberBand'
+    RUBBER_BAND = 'animate__animated animate__rubberBand',
+    FADE_INSIDE = 'animate__animated animate__fadeInUpBig',
+    FADE_OUTSIDE = 'animate__animated animate__fadeOutUpBig'
+
 }
 
 enum VIEW_ANIMATION_SUPPORTER {

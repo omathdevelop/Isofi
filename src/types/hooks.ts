@@ -11,7 +11,7 @@ type UseTextAnimate<S extends string, B extends boolean, N extends number, A ext
 };
 
 type UseViewAnimate<S> = {
-    animateType: 'jump' | 'flash' | 'pulse' | 'rubberBand'
+    animateType: 'jump' | 'flash' | 'pulse' | 'rubberBand' | 'fadeInside' | 'fadeOutside'
     delay?: S,
     repeat?: S,
     duration?: S

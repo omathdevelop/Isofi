@@ -8,6 +8,7 @@ left: 0;
 display: flex;
 justify-content: center;
 align-items: center;
+cursor: pointer;
 @media (min-width: 48rem){
     display: none;
  }

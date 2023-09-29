@@ -57,5 +57,10 @@ background: rgb(199, 140, 136);
   display: none;
 }
 `;
+const PlayListButtonVariant = styled(PlayListButton)`
+@media (max-width: 48rem){
+  display: block;
+}
+`
 
-export {ButtonView, TherapyButton, PlayListButton};
+export {ButtonView, TherapyButton, PlayListButton, PlayListButtonVariant};

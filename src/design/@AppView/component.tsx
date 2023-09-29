@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {motion} from 'framer-motion';
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ padding: .25rem;
  word-spacing: 0.5;
  margin: .25rem;
 `;
-const UnorderView = styled(motion.ul)`
+const UnorderView = styled(motion.ul)<{setOrder:'mobile'|'desktop'}>`
 padding: .25rem;
  display: flex;
  justify-content: center;
@@ -46,7 +46,11 @@ padding: .25rem;
 
 
  @media (max-width: 48rem){
-    display: none;
+    ${props => props.setOrder === 'mobile'? (css`
+      display: none;
+    `): css`
+    display: block;
+    `}
  }
 `
 const ListView = styled(motion.li)`

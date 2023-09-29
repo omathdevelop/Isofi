@@ -1,10 +1,10 @@
 import { combineReducers } from "@reduxjs/toolkit";
 // import { persistReducer } from 'redux-persist';
 // import storage from "redux-persist/lib/storage";
-import { UrlReducer } from "../@slices/slice";
+import { StateMangementReducer } from "../@slices/slice";
 
 const RootReducer = combineReducers({
-    url: UrlReducer
+    stateManagement: StateMangementReducer
 });
 type RootState = ReturnType<typeof RootReducer>
 export { RootReducer };
