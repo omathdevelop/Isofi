@@ -1,6 +1,26 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalView = createGlobalStyle`
+@font-face {
+  font-family:Gilroy;
+  src: url('../../fonts/Gilroy-Regular.otf') format('otf');
+  font-weight: normal;
+}
+@font-face {
+  font-family:Gilroy;
+  src: url('../../fonts/Gilroy-Bold.otf') format('otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family:Gilroy;
+  src: url('../../fonts/Gilroy-Extrabold.otf') format('otf');
+  font-weight: bolder;
+}
+@font-face {
+  font-family:GilroyItalic;
+  src: url('../../fonts/Gilroy-RegularItalic.otf') format('otf');
+  font-weight: normal;
+}
 :root{
     #root{
         padding: 0;
@@ -18,16 +38,10 @@ const GlobalView = createGlobalStyle`
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Martian Mono', monospace;
+  font-family: 'Gilroy', sans-serif;
 };
 
-/*  font-family: 'Audiowide', cursive;
-font-family: 'Lobster Two', cursive;
-font-family: 'Martian Mono', monospace;
-font-family: 'Monoton', cursive;
-font-family: 'Reem Kufi', sans-serif;
-font-family: 'Sriracha', cursive; */
-/* background: linear-gradient(0deg, var(--Navigation-fill, rgba(101, 44, 71, 0.48)) 0%, var(--Navigation-fill, rgba(101, 44, 71, 0.48)) 100%), url(<path-to-image>), lightgray -1px -11.366px / 100% 141.393% no-repeat; */
+
                 /*Isofi ProJect Themes:  Colors, Fonts, Sizing  */
 
 
@@ -62,15 +76,11 @@ font-family: 'Sriracha', cursive; */
                --theme-hero-high-light_text: rgba(248, 201, 195, 1);
 
                /* Font Families */
-               --theme-font-audio:'Audiowide', cursive;
-               --theme-font-reem: 'Reem Kufi', sans-serif;
-               --theme-font-mon:  'Monoton', cursive;
-               --theme-font-sri:  'Sriracha', cursive; 
-               --theme-font-lob: 'Lobster Two', cursive;
-               --theme-font-mar: 'Martian Mono', monospace;
+               --theme-font-gilroy:Gilroy;
 
                --theme-footer-border:1px solid #000;
                --theme-bg: #2C082A;
+               --theme-text: #FFF;
                
 }
 `

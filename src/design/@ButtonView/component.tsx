@@ -10,7 +10,6 @@ const ButtonView = styled(motion.button)`
   height: 2rem;
   border: none;
   box-shadow: rgb(38, 57, 77) 0px 1rem 1.2rem -10px; 
-  border-radius: 2.5rem;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -28,16 +27,28 @@ const ButtonView = styled(motion.button)`
 const TherapyButton = styled(ButtonView)`
 color: var(--theme-nav-btn-therapy-text);
 background: var(--theme-nav-btn-therapy-bg);
+text-align: center;
+font-family: Gilroy;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 0.00894rem;
 transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s;
 
-&:hover{
-background: rgba(88, 86, 86, 0.774);
-}
 `;
 // rgba(255, 205, 201, 1)
 const PlayListButton = styled(ButtonView)`
 color: var(--theme-nav-btn-playlist-text);
 background: var(--theme-nav-btn-playlist-bg);
+text-align: center;
+font-family: Gilroy;
+font-size: 0.75rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.25rem; /* 166.667% */
+letter-spacing: 0.01338rem;
+flex-shrink: 0;
 transition: all 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.5s;
 &:hover{
 background: rgb(199, 140, 136);

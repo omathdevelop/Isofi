@@ -1,23 +1,27 @@
 import * as React from 'react';
-import {IoMail} from 'react-icons/io5';
 import { FooterView } from "../../design/@FooterView/component";
 import { AnyView, TextView, UrlView } from '../../design/@AppView/component';
 import SocialMediaAccount from '../@SociaAccount/component';
 import Logo from '../@Logo/component';
-import { Content } from './@Shared/component';
-const Footer = () => (
+import { Content, Email } from './@Shared/component';
+const Footer = ({isMobile}:{isMobile:boolean}) => (
 <React.Fragment>
   <FooterView>
     <AnyView className={'logo-with-social'}>
-   <Logo/>
+      {isMobile?(
+        <Logo isMobileFooterLogo={isMobile}/>
+      ):(
+        <Logo isFooterLogo={true}/>
+
+      )}
    <Content/>
    <SocialMediaAccount/>
     </AnyView>
     <AnyView className={'contact'}>
-      <TextView as={'h2'}>Contact Us</TextView>
+      <TextView className={'contact-desc'}>Contact Us</TextView>
       <AnyView className={'emails'}>
-      <IoMail size={20} color={'var(--theme-hero-high-light_text)'}/>
-      <TextView>info@isofi.app</TextView>
+           <Email/>
+           <TextView>info@isofi.app</TextView>
       </AnyView>
     </AnyView>
     <AnyView className={'copywrite'}>

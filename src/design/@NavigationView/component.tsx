@@ -11,13 +11,18 @@ const HeaderView = styled(motion.header)`
     z-index: 1;
 `
 const LogoView = styled(motion.div)`
-    padding: .25rem;
-    margin: .25rem;
+padding: .25rem;
+font-feature-settings: 'liga' off;
+font-family: Gilroy;
+font-size: 5rem;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+    /* margin: .25rem; */
     .logo{
         color: var(--theme-nav-logo);
         font-size: var(--typo-logo-size);
         font-weight: var(--typo-logo-font-weight);
-        text-shadow: var(--typo-logo-shadow);
         cursor: pointer;
 
         @media (max-width: 48rem){

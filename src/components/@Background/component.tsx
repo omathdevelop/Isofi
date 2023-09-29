@@ -1,9 +1,9 @@
 import BackGround from '../../assets/background.png';
-import { HeroImageView } from "../../design/@ImageView/component";
+import { BackGroundImageView } from "../../design/@ImageView/component";
 
 const BackGroundImage = () => {
    return (<>
-        <HeroImageView setHeroImageUrl={BackGround} setHeroType={'third'} setDevice={'mobile'}/>
+        <BackGroundImageView setBackGroundImageUrl={BackGround}/>
    </>)
 };
 

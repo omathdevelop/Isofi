@@ -1,14 +1,15 @@
 import { HeaderView, NavView } from "../../design/@NavigationView/component";
 import { UnorderView, ListView, TextView, TopView } from "../../design/@AppView/component";
-import { IconView, Menu } from "../../design/@IconView/component";
+import { IconView  } from "../../design/@IconView/component";
 import Button from "../@Button/component";
 import Logo from "../@Logo/component";
+import { Menu } from "./@Shared/component";
 import { BUTTON_TYPE_CLASSES } from "../../constants/button";
 const NaviGation = ({message}:{message?:string}) => {
     const onMessage = () => {
         alert(message);
         setTimeout(() => {
-         window.open('https://isofi-cms-studio.netlify.app/')
+         window.open('https://isofi-cms-studio.netlify.app/');
         }, 2000)
     };
     return (

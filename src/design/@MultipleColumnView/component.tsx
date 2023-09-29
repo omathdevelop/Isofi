@@ -1,25 +1,38 @@
 import styled, {css} from "styled-components";
 import {motion} from 'framer-motion';
 
+
 const TextureOneCSS = css`
 .texture-one{
  position: absolute;
- top:40%;
- left:5%;
-width:max-content;
+ /* top:0; */
+ left:0;
+width:100%;
  display:flex;
  justify-content: flex-start;
  align-items: center;
  flex-direction: column;
  gap:.5rem;
- color: var(--theme-hero-high-light_text);
- font-size: 1.2rem;
  box-sizing: border-box;
  overflow: hidden;
+ flex-shrink: 0;
 
- @media (max-width: 48rem) {
-   font-size: 1.2rem; 
+ p{
+  padding: .5rem;
+  align-self: flex-start;
+  color: var(--theme-hero-high-light_text);
+  text-align: center;
+  width:47%;
+  font-family: Gilroy;
+font-size: 2.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+@media (max-width: 48rem) {
+  font-size: 1.2rem; 
 }
+ }
+
 
 }
 
@@ -28,58 +41,66 @@ width:max-content;
 const TextureTwoCSS = css`
 .texture-two{
  position: absolute;
- top:40%;
- left:50%;
- padding: .5rem;
- margin-left: 2rem;
-max-width:max-content;
+ /* top:40%; */
+ left:0%;
+width:100%;
  display:flex;
  justify-content: flex-start;
  align-items: center;
  flex-direction: column;
- color: var(--theme-hero-high-light_text);
- font-size: 1.2rem;
  box-sizing: border-box;
  gap:.5rem;
+ flex-shrink: 0;
 
+ p{
+  padding: .5rem;
+  align-self: flex-end;
+  color: var(--theme-hero-high-light_text);
+  text-align: center;
+  width:47%;
+  font-family: Gilroy;
+font-size: 2.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+@media (max-width: 48rem) {
+  width:90%;
+  align-self: center;
+  align-content: end;
+font-family: Gilroy;
+font-size: 1.625rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal; 
+}
+ }
 
 
  @media (max-width: 48rem) {
-   font-size: 1rem; 
-   top:70%;
-   left:0;
+   top:58%;
 }
 
 }
 `
-const LargeTexture = css`
- .texture-two{
-  @media (max-width:52rem) {
-    top:20%;
-}
-} 
-`
-const SecondLargeTexture = css`
- .texture-one{
-  @media (max-width:52rem) {
-    top:20%;
-}
-} 
-`
-const MultipleColumnView = styled(motion.div)`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+// const LargeTexture = css`
+//  .texture-two{
+//   @media (max-width:52rem) {
+//     top:20%;
+// }
+// } 
+// `
+// const SecondLargeTexture = css`
+//  .texture-one{
+//   @media (max-width:52rem) {
+//     top:20%;
+// }
+// } 
+// `
 
-
-`
-
-
-const ColumnView = styled(motion.div)<{isTablet:boolean}>`
+const DevicesCSS = css`
 position: relative;
-max-width:80rem;
-top: -2rem;
+width:100%;
+top: -4.8rem;
 left: 0;
 display: flex;
 justify-content: center;
@@ -88,28 +109,55 @@ overflow: hidden;
 
 ${TextureOneCSS}
 ${TextureTwoCSS}
-${props => props.isTablet && LargeTexture};
-${props => props.isTablet && SecondLargeTexture};
 
+@media (max-width: 48rem){
+   flex-direction: column;
+   justify-content: flex-start;
+   display: none;
+}
+`
+const MultipleColumnView = styled(motion.div)`
+position: relative;
+top:0;
+left:0;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap:.75rem;
 
+`
+const ColumnView = styled(motion.div)<{setDevice?:'mobile' | 'desktop'}>`
+${props => props.setDevice === 'mobile'? (DevicesCSS): (
+  css`
+position: relative;
+width:100%;
+top: -4.8rem;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+
+${TextureOneCSS}
+${TextureTwoCSS}
 
 @media (max-width: 48rem){
    flex-direction: column;
    justify-content: flex-start;
 }
+
+  `
+)};
 `
 
 const ColumnOneImage = styled(motion.img)`
 position: relative;
 top:0;
 left:0;
- width: 50%;
+ width: 100%;
  height: auto;
 /* border: 2px solid var(--theme-hero-high-light_text); */
-border-radius:1rem;
-padding: .5rem;
-margin-left:.5rem;
-box-shadow: rgb(38, 57, 77) 0px 1rem 1.2rem -10px; 
 overflow: hidden;
 
 @media (max-width:48rem){

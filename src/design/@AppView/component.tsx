@@ -17,16 +17,18 @@ const TopView = styled(motion.div)`
   }
 `
 const View = styled(motion.main)`
-    width:100vw;
+    max-width:100rem;
     height: 100vh;
-    position: relative;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
     overflow-x: hidden;
-    overflow-y: scroll;
-    background: rgba(21, 19, 19, 0.656);
-    /* background: linear-gradient(0deg, var(--theme-nav-bg, rgba(101, 44, 71, 0.48)) 0%, var(--theme-nav-bg, rgba(101, 44, 71, 0.48)) 100%), lightgray -1px -11.366px / 100% 141.393% no-repeat; */
+    background: #CED2DA;
+    position: relative;
+    top:0;
+    left:0;
+
+    /* @media (max-width: 48rem){
+      height:80vh;
+    } */
+        /* background: linear-gradient(0deg, var(--theme-nav-bg, rgba(101, 44, 71, 0.48)) 0%, var(--theme-nav-bg, rgba(101, 44, 71, 0.48)) 100%), lightgray -1px -11.366px / 100% 141.393% no-repeat; */
 `
 
 const TextView = styled(motion.p)`
@@ -52,6 +54,11 @@ const ListView = styled(motion.li)`
     margin-left: .25rem;
     .items{
       color:#FFF;
+font-family: Gilroy;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
       cursor: pointer;
     }
 `
@@ -94,4 +101,4 @@ color: ${props => props.options === 'content'? '#FFF': props.options === 'conten
 line-height: normal;
 `;
 
-export {TopView, View, TextView, UrlView, ListView, UnorderView, HeroView, BreakView, SpanView, LineView, AnyView}
+export {TopView, View, TextView, UrlView, ListView, UnorderView, HeroView, BreakView, SpanView, LineView, AnyView};

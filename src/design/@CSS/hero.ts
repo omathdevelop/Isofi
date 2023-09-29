@@ -2,34 +2,46 @@ import {css} from 'styled-components';
 
 const heroTypeOne = css`
     .content{
-    position: absolute;
-    top: 11.5rem;
-    left: 3rem;
-    display: flex;
-    justify-content:flex-end;
-    align-items: flex-start;
+    /* height:100%; */
+    width: fit-content;
+     display: flex; 
+     justify-content:flex-end;
+    align-items: flex-start; 
     flex-direction: column;
     gap: .5rem;
-    width: 100%;
-    font-family: var( --theme-font-mar);
-    @media (max-width: 48rem){
+    text-align: center;
+    position: absolute;
+    top:10rem;
+    left:4rem;
+    /* padding: .25rem .5rem .25rem .5rem; */
+   
+
+
+.title{
+font-family: Gilroy;
+font-size: 4rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+color: var(--theme-hero-high-light_text);
+@media (max-width: 48rem){
+font-family: Gilroy;
+font-size: 2rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+    }
+}
+}
+
+
+    /* @media (max-width: 48rem){
         width:100%;
         left: .25rem;
         top: 9rem;
-    };
+    }; */
 
-    p{
-        font-size: 3rem;
-        color: var(--theme-hero-high-light_text);
-        @media (max-width: 48rem){
-        font-size:1.5rem;
-        
-    }
-    /* @media (max-width: 30rem){
-        font-size:2.2rem;
-    } */
-    }
-}
+
 `
 const heroTypeTwo = css`
     .content{
@@ -44,51 +56,60 @@ const heroTypeTwo = css`
     width: 100%;
     @media (max-width: 48rem){
         width:100%;
-        top: 6rem;
+        
     };
 
     .first-column{
+        width:50%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         gap: 1rem;
         p{
-        font-size: 2rem;
-        font-weight: 600;
-        font-family: var(--theme-font-mar);
+font-family: Gilroy;
+font-size: 4rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
         color: var(--theme-hero-high-light_text);
         @media (max-width: 48rem){
-        font-size:3rem;
-        font-weight: 600;
-        text-shadow: 2px 2px 3px var(--theme-hero-high-light_text);
-        font-family: var(--theme-font-sri);
-    }
-    @media (max-width: 48rem){
-        font-size:2rem;
-        padding: .5rem;
+ font-family: Gilroy;
+font-size: 1.625rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+width:100%;
     }
     };
      
     }
     .second-column{
+        width:60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap:1rem;
         p{
-        font-size: 2rem;
+            font-family: Gilroy;
+font-size: 2rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
         color: var(--theme-hero-high-light_text);
-        @media (min-width: 48rem){
-        font-size:1.8rem;
-        font-family: var(--theme-font-sri);
-    }
-    /* @media (min-width: 30rem){
-        font-size:.75rem;
-    } */
+        @media (max-width: 48rem){
+font-family: Gilroy;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+        };
+
     };
+    @media (max-width:48rem){
+        display:none;
     }
-    @media (max-width: 48rem) {
-          .second-column{
-            display: none;
-          }
-    }
-}
+    }}
 `
 export {heroTypeOne as HeroOneCSS, heroTypeTwo as HeroTwoCSS};

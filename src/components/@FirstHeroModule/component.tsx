@@ -18,9 +18,11 @@ const FirstHeroModule  = () => {
             setContentType={'hero_one'}
             >
                 <AnyView className={'content'}>
+                    <AnyView className={'title'}>
                     <TextView className={'revo'}>Revolutionizing</TextView>
                     <TextView>mental health at</TextView>
             <TextView>work with <SpanView options={'content'}>music.</SpanView></TextView>
+                    </AnyView>
                 </AnyView>
             </HeroImageView>
             </>

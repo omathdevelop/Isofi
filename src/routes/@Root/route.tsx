@@ -15,9 +15,10 @@ import FooterModule from '../../components/@Footer/component';
 import Loadable from '../../components/@Loadable/component';
 const Root = () => {
   const { isLoaded } = useLoading();
-  configResponsive({ isXtraSmall: 0, isSmall: 485, isMedium: 768, isLarge: 820, isXtraLarge: 1200 });
+  configResponsive({ isXtraSmall: 0, isSmall: 380, isMedium: 768, isLarge: 820, isXtraLarge: 1200 });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {  isSmall, isMedium, isLarge, } = useResponsive();
+  const {   isMedium, isLarge, } = useResponsive();
+  const isNotMobile = !isMedium;
   return (
     <View>
       <NaviGationModule message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>
@@ -25,15 +26,21 @@ const Root = () => {
       {isLoaded ? (
         <>
           <FirstHeroModule />
-          <SecondHeroModule isSmall={isSmall} isMedium={isMedium} />
+          <SecondHeroModule />
           <CardModule />
           <SingleColumnModule />
           <MultipleColumnModule isLarge={isLarge} isMedium={isMedium} />
           <ImageModule />
-          <TeamCardModule />
-          <TeamModule/>
-          <Outlet />
-          <FooterModule />
+          <TeamCardModule isMobile={isNotMobile}/>
+          <TeamModule isMobile={isNotMobile}/>
+           {/* <BlankFillModule/> */}
+          {/* {isSmall  && !isMedium && <BlankFillModule/>} */}
+          <Outlet/>
+          <FooterModule isMobile={isNotMobile} />
+          {/* {isSmall && <p>I AM Mobile</p>} */}
+          {/* {isNotMobile && <p>I AM Tablet</p>}
+          {isLarge && <p>I AM Desktop</p>} */}
+
         </>
       ) : (
 
