@@ -16,7 +16,7 @@ export default defineConfig({
       name: name, title: title, icon: icon,
       structure: CustomStructure
     },
-  )],
+  ), visionTool()],
 
   schema: {
     types: schemaTypes,
