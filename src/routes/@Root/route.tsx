@@ -43,7 +43,6 @@ const Root = () => {
           <Outlet/>
           <FooterModule isMobile={isNotMobile} />
           {/* {isSmall && <p>I AM Mobile</p>} */}
-            {isNotMobile && <p>I AM Tablet</p>}
 
         </>
       ) : (
