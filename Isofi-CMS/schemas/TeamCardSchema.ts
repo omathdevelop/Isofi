@@ -40,6 +40,14 @@ const TeamCardSchema = defineType({
             title: 'Team Description',
             type: 'blockContent',
             initialValue: 'The Largest Music Therapy Lead Industry'
+        }),
+        defineField({
+            name: 'teamCardBackGround',
+            title: 'Team Card BackGround Image',
+            type: 'image',
+            options:{
+                hotspot: true
+            }
         })
     ]
 });
