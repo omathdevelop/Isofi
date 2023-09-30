@@ -59,7 +59,7 @@ width:100%;
   text-align: center;
   width:47%;
   font-family: Gilroy;
-font-size: 2.25rem;
+font-size: 2rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -82,20 +82,7 @@ line-height: normal;
 
 }
 `
-// const LargeTexture = css`
-//  .texture-two{
-//   @media (max-width:52rem) {
-//     top:20%;
-// }
-// } 
-// `
-// const SecondLargeTexture = css`
-//  .texture-one{
-//   @media (max-width:52rem) {
-//     top:20%;
-// }
-// } 
-// `
+
 
 const DevicesCSS = css`
 position: relative;

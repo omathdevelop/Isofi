@@ -21,7 +21,7 @@ const Root = () => {
   const isMenuOpen = useSelector(onIsMenuOpenSelector);
   configResponsive({ isXtraSmall: 0, isSmall: 380, isMedium: 768, isLarge: 820, isXtraLarge: 1200 });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {   isMedium, isLarge, } = useResponsive();
+  const {   isMedium  } = useResponsive();
   const isNotMobile = !isMedium;
   return (
     <View>
@@ -33,7 +33,7 @@ const Root = () => {
           <SecondHeroModule />
           <CardModule />
           <SingleColumnModule />
-          <MultipleColumnModule isLarge={isLarge} isMedium={isMedium} />
+          <MultipleColumnModule  />
           <ImageModule />
           <TeamCardModule isMobile={isNotMobile}/>
           <TeamModule isMobile={isNotMobile}/>
@@ -43,8 +43,7 @@ const Root = () => {
           <Outlet/>
           <FooterModule isMobile={isNotMobile} />
           {/* {isSmall && <p>I AM Mobile</p>} */}
-          {/* {isNotMobile && <p>I AM Tablet</p>}
-          {isLarge && <p>I AM Desktop</p>} */}
+            {isNotMobile && <p>I AM Tablet</p>}
 
         </>
       ) : (

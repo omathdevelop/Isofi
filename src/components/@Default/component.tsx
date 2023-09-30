@@ -9,7 +9,7 @@ const Default = () => {
     return (
     <React.Fragment>
             <TextView  style={{ textAlign: 'center' }} onClick={onTextAnimate}>click</TextView>
-            <TextView onAnimationEnd={onViewAnimateEnd} className={`test-text ${ isViewAnimate.viewAnimate? '' : jumpAnimate }`} as={'h2'}>Welcome To (Isofi) Root Route</TextView>
+            <TextView onAnimationEnd={onViewAnimateEnd} className={`test-text ${ isViewAnimate? '' : jumpAnimate }`} as={'h2'}>Welcome To (Isofi) Root Route</TextView>
         </React.Fragment>
         )
     
