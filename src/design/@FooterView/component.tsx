@@ -14,12 +14,12 @@ const FooterView = styled(motion.div) <{ setDevice: 'destop' }>`
  align-items: center;
  flex-direction: column;
 
- .content{
-font-family: Helvetica Neue;
+ .content p{
+font-family: var(--theme-font-gilroy);
 font-size: 1.2rem;
 font-style: normal;
 font-weight: 400;
-line-height: 130%; /* 1.95rem */
+line-height: 1.95rem; /* 1.95rem */
 letter-spacing: -0.03rem;
 color:var(--theme-hero-high-light_text);
 
@@ -54,13 +54,12 @@ color: var(--theme-hero-high-light_text);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Inter;
     p{
         font-size: 1rem;
         font-style: normal;
         font-weight: 500;
         line-height: 1.5rem;
-        font-family: var(--theme-font-gilroy);
+        font-family: var(--theme-font-inter);
         color: var(--theme-hero-high-light_text);
 
     }
@@ -70,7 +69,7 @@ color: var(--theme-hero-high-light_text);
 width:100%;
 text-align: center;
 padding: .25rem;
-font-family: var(--theme-font-gilroy);;
+font-family: var(--theme-font-inter);;
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
@@ -85,7 +84,7 @@ align-items: center;
 flex-direction: row;
 padding: .25rem;
 p a{
-font-family: var(--theme-font-gilroy);
+font-family: var(--theme-font-inter);
 font-size: 1rem;
 font-style: normal;
 font-weight: 400;
@@ -100,8 +99,8 @@ color:var(--theme-hero-high-light_text);
         display: none;
         margin-left: 160%;
     }
-    .copywrite{
-        font-family: Helvetica Neue;
+    .copywrite p{
+font-family: var(--theme-font-gilroy);
 font-size: 1.125rem;
 font-style: normal;
 font-weight: 700;
@@ -113,7 +112,7 @@ color: var(--theme-text);
     .legal{
     justify-content: right;
     p a{
-font-family: Helvetica Neue;
+font-family: var(--theme-font-gilroy);
 font-size: 1.125rem;
 font-style: normal;
 font-weight: 700;

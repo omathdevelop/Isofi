@@ -6,7 +6,7 @@ const HiddenCSS = css`
     display: none;
 ` 
 const HeroImageView = styled(motion.div) <ImageViewTyping>`
-width:100%;
+max-width:100%;
 height: 100vh;
 background-size: cover;
 background-position: center;
@@ -29,6 +29,7 @@ ${props => props.setContentType === 'hero_one' && HeroOneCSS};
 `
 const SecondHeroImageView = styled(HeroImageView)<{setSecondHeroImageUrl:string}>`
 top: -4.925rem;
+max-width: 100%;
 height:100vh;
 background-image: ${props => `url(${props.setSecondHeroImageUrl})`} ;
 background-size: cover;
@@ -44,6 +45,7 @@ ${HeroTwoCSS};
 `
 const ColumnImageView = styled(HeroImageView) <{ setColumnImageUrl: string }>`
 top: -4.9rem;
+max-width:100%;
 height:100vh;
 background-image: ${props => `url(${props.setColumnImageUrl})`} ;
 background-size: cover;
@@ -57,7 +59,7 @@ background-repeat: no-repeat;
 `
 const BackGroundImageView = styled(HeroImageView)<{setBackGroundImageUrl:string}>`
 top:-4.7rem;
-width:100%;
+max-width:100%;
 height: 100vh;
 background-size: cover;
 background-position: center;
@@ -70,16 +72,29 @@ background-image: ${props => `url(${props.setBackGroundImageUrl})`} ;
 
 `
 const TeamImageView = styled(HeroImageView)<{setTeamImageUrl:string, setDevice?:'mobile'|'desktop'}>`
-width:100%;
-height: 100vh;
+position:relative;
+top:0;
+left:0;
+overflow: hidden;
+max-width:100%;
+height: auto;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-background-image: ${props => `url(${props.setTeamImageUrl})`} ;
-@media (max-width:48rem){
-    height:75vh;
-    ${props => props.setDevice === 'mobile' && HiddenCSS  };
-
-} 
+background-image: ${props => `url(${props.setTeamImageUrl})`};
+.team-card{
+    display: grid;
+    grid-template-columns:repeat(20rem, 1fr);
+    gap: 2rem;
+    
+    @media (min-width:48rem){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    
+        /* ${props => props.setDevice === 'mobile' && HiddenCSS  }; */
+    
+    } 
+}
 `
 export { HeroImageView, SecondHeroImageView, ColumnImageView, BackGroundImageView, TeamImageView }

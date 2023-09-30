@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { BreakPointCSS } from "../@CSS/main";
 const GlobalView = createGlobalStyle`
 @font-face {
   font-family:Gilroy;
@@ -25,6 +25,7 @@ const GlobalView = createGlobalStyle`
     #root{
         padding: 0;
         margin: 0;
+        ${BreakPointCSS}
       };
 
       *{
@@ -39,6 +40,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Gilroy', sans-serif;
+  ${BreakPointCSS}
+
 };
 
 
@@ -47,8 +50,8 @@ body {
 
                             /* NaviGation Themes*/
                 --theme-nav-bg:rgba(101, 44, 71, 0.48);
-                --theme-nav-width: width: 90rem;  // Placeholder
-                --theme-nav-width: height: 10rem;  // Placeholder
+                --theme-nav-width: max-width: 100%;  // Placeholder
+                --theme-nav-width: height: auto;  // Placeholder
                 --theme-nav-item-text:rgba(255, 255, 255, 1);
                 --theme-nav-btn-playlist-bg:rgba(255, 205, 201, 1);
                 --theme-nav-btn-playlist-text:rgba(110, 41, 38, 1);
@@ -58,8 +61,8 @@ body {
                 
                            /* Navigation Typography  */
                 --typo-logo-font:Gilroy;
-                --typo-logo-size:2rem;
-                --typo-logo-size-mobile:1.5rem;
+                --typo-logo-size:2.8rem;
+                --typo-logo-size-mobile:2.5rem;
                 --typo-logo-style:normal;
                 --typo-logo-font-weight:300;
                 --typo-logo-line-height:normal;
@@ -77,7 +80,7 @@ body {
 
                /* Font Families */
                --theme-font-gilroy:Gilroy;
-
+               --theme-font-inter:'Inter', sans-serif;
                --theme-footer-border:1px solid #000;
                --theme-bg: #2C082A;
                --theme-text: #FFF;

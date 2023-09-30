@@ -1,22 +1,62 @@
 import { Outlet } from "react-router-dom";
-import useLoading from "../../hooks/useLoading";
 import NaviGation from "../../components/@Navigation/component";
-import Loadable from "../../components/@Loadable/component";
 import Legal from "../../components/@Legal/component";
-// import { RouteViews } from "../../design/@RouteViews/route"
-// import { TextView, AnyView } from "../../design/@AppView/component"
 const PrivacyPolicy = () => {
-    const {isLoaded} = useLoading();
     return (
-
-<>
+    <>
     <NaviGation/>
     <Outlet/>
-    <>
-    {isLoaded? (
-      <>
       <Legal legalType={'Privacy Policy'}/>
-    {/* <AnyView className={'content'}>
+      </>
+    )
+};
+
+export default PrivacyPolicy;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {/* <AnyView className={'content'}>
     <TextView as={'h2'} className={'text'}>Privacy Policy</TextView>
     <TextView>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio aut assumenda voluptas dolorem commodi quasi aliquam autem provident nostrum excepturi repellat saepe, 
@@ -29,17 +69,3 @@ const PrivacyPolicy = () => {
             possimus soluta laboriosam nam fuga commodi a?
         </TextView>
     </AnyView> */}
-      </>
-    ):(
-     <>
-     <Loadable isLoaded={true}/>
-     </>
-    )}
-    
-    </>
-
-    </>
-    )
-};
-
-export default PrivacyPolicy;

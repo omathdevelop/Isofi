@@ -6,8 +6,8 @@ const Card = () =>{
    <CardView>
       <AnyView className={'content'}>
          <AnyView>
-         <TextView>Businesses and employees, with new ways of working and different values, are putting mental health at the centre of their ethos.
-            New ways of working need a new approach to mental health treatment and wellbeing</TextView>
+         <TextView>Businesses and employees, with new ways of working and different values, are putting mental health at the centre of their ethos.</TextView>
+           <TextView> New ways of working need a new approach to mental health treatment and wellbeing</TextView>
             <TextView><SpanView options={'content'}>Isofi puts music at the centre of everything we do</SpanView></TextView>
          </AnyView>
       </AnyView>

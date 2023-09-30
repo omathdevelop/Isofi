@@ -2,12 +2,13 @@ import styled, {css} from 'styled-components';
 import { motion } from 'framer-motion';
 const MobileCSS = css`
 width:100%;
+height: auto;
 position: relative;
 top:0;
 left:0;
 
 @media(max-width: 48rem){
-  top:-2.5rem;
+  top:-2rem;
   display:block;
 }
 `;
@@ -15,8 +16,8 @@ left:0;
 const DesktopCSS = css`
 position: relative;
 width: 100%;
-height: 90%;
-top: 2rem;
+height: auto;
+top: -1.5rem;
 left:0;
 `
 const TopTeamView = styled(motion.div)<{setDevice: 'mobile'| 'desktop'}>`
@@ -49,7 +50,7 @@ object-position: center;
 }
 
 .team-name{
-font-family: Gilroy;
+font-family: var(--theme-font-inter);
 font-size: 2rem;
 font-style: normal;
 font-weight: 600;
@@ -57,7 +58,7 @@ line-height: normal;
 color:var(--theme-text);
 };
 .tagline{
-  font-family: Gilroy;
+  font-family: var(--theme-font-inter);
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -66,16 +67,22 @@ color:var(--theme-text);
   };
 .team-content{
 padding: .25rem .5rem .25rem .5rem;
-color:var(--theme-text);
+ p{
+  color:var(--theme-text);
 font-feature-settings: 'liga' off;
-font-family: Inter;
+font-family: var(--theme-font-inter);
 font-size: 0.875rem;
 font-style: normal;
 font-weight: 400;
-line-height: normal;
+line-height: 1rem;
+ }
 }
 
 @media (min-width:48rem){
+  .team-name, .tagline, .team-content{
+    font-family: var(--theme-font-gilroy);
+
+  }
   max-width: 20rem;
   .team-photo {
 width: 100%;

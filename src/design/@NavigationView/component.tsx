@@ -6,16 +6,17 @@ const HeaderView = styled(motion.header)`
     height: var(--theme-nav-height);
     background: var(--theme-nav-bg);
     position: sticky;
-    top: 0;
+    top: -5rem;
     left: 0;
     z-index: 1;
 `
 const MobileHeaderView = styled(motion.header)`
 position: absolute;
-top:5rem;
-left:3.8rem;
+top:5vh;
+left:3rem;
 z-index: 1;
-width: 15rem;
+width: 20rem;
+height: auto;
   padding: 1.2rem;
   color: var(--theme-text);
   background: linear-gradient(#212121, #212121) padding-box,
@@ -32,21 +33,6 @@ width: 15rem;
 
 
 
-.heading {
-  font-size: 1.5rem;
-  margin: 1.5rem 0 1rem;
-  font-weight: 600;
-}
-
-
-
-
- .footer {
-  font-weight: 600;
-  color: #717171;
-  margin-right: 4px;
-}
-
 @media (min-width:48rem){
     display:none;
 }
@@ -54,21 +40,18 @@ width: 15rem;
 `
 const LogoView = styled(motion.div)`
 padding: .25rem;
-font-feature-settings: 'liga' off;
-font-family: Gilroy;
-font-size: 5rem;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
     /* margin: .25rem; */
     .logo{
         color: var(--theme-nav-logo);
         font-size: var(--typo-logo-size);
         font-weight: var(--typo-logo-font-weight);
+        font-family: var(--theme-font-gilroy);
         cursor: pointer;
 
         @media (max-width: 48rem){
             font-size: var(--typo-logo-size-mobile);
+            font-family: var(--theme-font-inter);
+
         }
     }
 `

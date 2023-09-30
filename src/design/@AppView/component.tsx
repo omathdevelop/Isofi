@@ -18,7 +18,7 @@ const TopView = styled(motion.div)`
 `
 const View = styled(motion.main)`
     max-width:100rem;
-    height: 100vh;
+    height: auto;
     overflow-x: hidden;
     background: #CED2DA;
     position: relative;
@@ -59,11 +59,19 @@ const ListView = styled(motion.li)`
     .items{
       color:#FFF;
 font-family: Gilroy;
-font-size: 0.875rem;
+font-size: 1.2rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
-      cursor: pointer;
+cursor: pointer;
+@media (max-width:48rem){
+font-family: var(--theme-font-inter);
+font-size: 1.2rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+cursor: pointer;
+}
     }
 `
 const UrlView = styled(Link)`
@@ -87,6 +95,11 @@ const HeroView = styled(motion.div)`
     width: 100%;
 
     .single-column-text{
+font-family: Gilroy;
+font-size: 2rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
       color: var(--theme-hero-high-light_text);
     }
 

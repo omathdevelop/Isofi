@@ -29,6 +29,7 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 @media (max-width: 48rem) {
+  font-family: var(--theme-font-inter);
   font-size: 1.2rem; 
 }
  }
@@ -44,6 +45,7 @@ const TextureTwoCSS = css`
  /* top:40%; */
  left:0%;
 width:100%;
+height:auto;
  display:flex;
  justify-content: flex-start;
  align-items: center;
@@ -67,8 +69,8 @@ line-height: normal;
   width:90%;
   align-self: center;
   align-content: end;
-font-family: Gilroy;
-font-size: 1.625rem;
+font-family: var(--theme-font-inter);
+font-size: 1.425rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal; 
@@ -79,7 +81,6 @@ line-height: normal;
  @media (max-width: 48rem) {
    top:58%;
 }
-
 }
 `
 

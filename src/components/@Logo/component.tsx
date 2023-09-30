@@ -3,14 +3,14 @@ import { CSSProperties } from "styled-components";
 import { LogoView } from "../../design/@NavigationView/component";
 import { TextView } from "../../design/@AppView/component";
 const FooterLogoStyles:CSSProperties = {
-fontFamily:'var(--theme-font-gilroy)',
+fontFamily:'var(--theme-font-inter)',
 fontSize: '4rem',
 fontStyle: 'normal',
 fontWeight:300,
 lineHeight:'normal'
 };
 const MobileFooterLogoStyles:CSSProperties = {
-    fontFamily:'var(--theme-font-gilroy)',
+    fontFamily:'var(--theme-font-inter)',
     fontSize: '2rem',
     fontStyle: 'normal',
     fontWeight:300,

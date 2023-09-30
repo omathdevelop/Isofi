@@ -3,7 +3,8 @@ import {css} from 'styled-components';
 const heroTypeOne = css`
     .content{
     /* height:100%; */
-    width: fit-content;
+    width: 100%;
+    height: auto;
      display: flex; 
      justify-content:flex-end;
     align-items: flex-start; 
@@ -25,21 +26,20 @@ font-weight: 600;
 line-height: normal;
 color: var(--theme-hero-high-light_text);
 @media (max-width: 48rem){
-font-family: Gilroy;
+font-family: var(--theme-font-inter);
 font-size: 2rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
     }
 }
+@media (max-width: 48rem){
+    left: .25rem;
+    top: 9rem;
+};
 }
 
 
-    /* @media (max-width: 48rem){
-        width:100%;
-        left: .25rem;
-        top: 9rem;
-    }; */
 
 
 `
@@ -60,15 +60,16 @@ const heroTypeTwo = css`
     };
 
     .first-column{
-        width:50%;
+        width:40%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        gap: 1rem;
-        @media (max-width:40rem){
-             margin-top: -2.5rem;
-             margin-left: 4rem;
+        gap: .75rem;
+        @media (max-width:48rem){
+            width:100%;
+             margin-top: -2.2rem;
+             margin-left: 2.5rem;
         }
         p{
 font-family: Gilroy;
@@ -78,12 +79,12 @@ font-weight: 600;
 line-height: normal;
         color: var(--theme-hero-high-light_text);
         @media (max-width: 48rem){
-font-family: Gilroy;
-font-size: 1.625rem;
+font-family: var(--theme-font-inter);
+font-size: 1.925rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
-width:100%;
+width:95%;
     }
     };
      
@@ -96,20 +97,12 @@ width:100%;
         flex-direction: column;
         gap:1rem;
         p{
-            font-family: Gilroy;
+font-family: Gilroy;
 font-size: 2rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
-        color: var(--theme-hero-high-light_text);
-        @media (max-width: 48rem){
-font-family: Gilroy;
-font-size: 1.25rem;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-        };
-
+color: var(--theme-hero-high-light_text);
     };
     @media (max-width:48rem){
         display:none;
