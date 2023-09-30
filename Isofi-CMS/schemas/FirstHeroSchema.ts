@@ -10,24 +10,52 @@ import {IoArrowForward, IoImage} from 'react-icons/io5'
     icon: IoArrowForward,
     description: 'This is the hero module below the navigation module',
     groups: [{name: 'media', title: 'Media'}],
-    fields: [
-        defineField({
-            name:'heroContent',
-            title: 'The Hero Content Editor',
-            type: 'blockContent'
-        }),
-        defineField({
-            name: 'HeroImage',
-            title: 'The Hero Image',
-            type: 'image',
-            options: {
-                hotspot: true
-            },
-            group: 'media',
-            icon:IoImage
+    fieldsets: [{name: 'firstHeroContent', title: 'The First Hero Contents'}, {name: 'thirdText', title: 'Third & White Text '}],
+                fields:[
+                    defineField({
+                        name: 'first',
+                        title: 'First Text',
+                        type: 'string',
+                        initialValue: 'Revolutionizing',
+                        fieldset: 'firstHeroContent'
+                    }),
+                    defineField({
+                        name: 'second',
+                        title: 'Second Text',
+                        type: 'string',
+                        initialValue: 'mental health at',
+                        fieldset: 'firstHeroContent'
 
-        })
-    ]
+                    }),
+                            {
+                               name:'ordinaryColorText',
+                               title:'Ordinary Color Text',
+                               type: 'string',
+                               initialValue:'work with',
+                               fieldset: 'thirdText'
+                            },
+                            {
+                                name:'whiteColorText',
+                                title:'The White Color Text',
+                                type: 'string',
+                                initialValue:'music.',
+                                fieldset:'thirdText'
+                             },
+                       
+                    defineField({
+                        name: 'HeroImage',
+                        title: 'The Hero Image',
+                        type: 'image',
+                        options: {
+                            hotspot: true
+                        },
+                        group: 'media',
+                        icon:IoImage
+            
+                    })
+                ],
+
+    
 });
 
 export default FirstHeroSchema;

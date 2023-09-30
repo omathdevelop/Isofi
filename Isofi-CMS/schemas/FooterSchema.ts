@@ -42,9 +42,9 @@ const FooterSchema = defineType({
         defineField({
             readOnly: true,
             name: 'serviceTerm',
-            title: 'Service Term',
+            title: 'Terms And Service ',
             type: 'string',
-            initialValue: 'Term Of Service',
+            initialValue: 'Terms And Service',
             group: 'terms',
             description: 'Cannot Edit This!'
         }),
