@@ -17,7 +17,9 @@ const ImageSchema = defineType({
             options:{
                 hotspot: true
             },
-            fields:[{name: 'alt', title: 'Alt Text', type:'string'}]
+            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+            description: 'Double Check If Image Size has a width:1440 & height:723',
+
 
         })
     ]

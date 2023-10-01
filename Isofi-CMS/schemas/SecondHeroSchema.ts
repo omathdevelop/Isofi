@@ -76,6 +76,8 @@ fieldsets: [{name: 'columnOne', title: 'Column One', description: 'The Hero Cont
                     },
                     fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                     group: 'media',
+                    description: 'Double Check If Image Size has a width:1440 & height:592',
+
         
                 })
             ],

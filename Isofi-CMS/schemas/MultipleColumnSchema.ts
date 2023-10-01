@@ -41,9 +41,9 @@ const MultipleColumnSchema = defineType({
                                 hotspot: true
                             },
                             fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
-                            description: '',
                             fieldset:'firstRow',
                             group: 'rowOne',
+                            description: 'Double Check If Image Size has a width:720 & height:573',
 
 
                         },
@@ -55,9 +55,9 @@ const MultipleColumnSchema = defineType({
                                 hotspot: true
                             },
                             fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
-                            description: '',
                             fieldset:'firstRow',
                             group: 'rowOne',
+                            description: 'Double Check If Image Size has a width:720 & height:573',
 
 
                         },
@@ -89,9 +89,10 @@ const MultipleColumnSchema = defineType({
                                         hotspot: true
                                     },
                                     fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
-                                    description: '',
                                     fieldset:'secondRow',
-                                    group: 'rowTwo'
+                                    group: 'rowTwo',
+                                    description: 'Double Check If Image Size has a width:720 & height:573',
+
 
                                 },
                                 {
@@ -102,9 +103,10 @@ const MultipleColumnSchema = defineType({
                                         hotspot: true
                                     },
                                     fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
-                                    description: '',
                                     fieldset:'secondRow',
-                                    group: 'rowTwo'
+                                    group: 'rowTwo',
+                                    description: 'Double Check If Image Size has a width:720 & height:573',
+
                                 }
             ]
                

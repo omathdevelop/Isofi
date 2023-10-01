@@ -11,7 +11,7 @@ const TeamCardSchema = defineType({
     groups: [{name: 'media', title: 'Media'}],
     fields: [
         defineField({
-            name: 'image',
+            name: 'photo',
             title: 'Upload Team Photo',
             type: 'image',
             options: {
@@ -20,10 +20,11 @@ const TeamCardSchema = defineType({
             fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
             group: 'media',
             icon: IoImage,
-            description: 'The Team Photo Goes Here'
+            description: 'Double Check If Image Size has a width:384 & height:235',
+
         }),
         defineField({
-            name: 'teamName',
+            name: 'name',
             title: 'Enter Team Name',
             type: 'string',
             validation: Rule => Rule.required().warning('Team "name" is required!'),
@@ -40,7 +41,7 @@ const TeamCardSchema = defineType({
             name: 'description',
             title: 'Team Description',
             type: 'blockContent',
-            initialValue: 'The Largest Music Therapy Lead Industry'
+            initialValue: 'writing code is the only thing that matter to me!'
         }),
         defineField({
             name: 'teamCardBackGround',
@@ -50,7 +51,9 @@ const TeamCardSchema = defineType({
                 hotspot: true
             },
             fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
-            group:'media'
+            group:'media',
+            description: 'Double Check If Image Size has a width:1440 & height:684',
+
 
         })
     ]

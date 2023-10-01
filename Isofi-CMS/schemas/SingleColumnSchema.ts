@@ -25,7 +25,7 @@ const SingleColumnSchema = defineType({
             },
             fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
             group: 'media',
-            description: 'This is where, you upload/update the single column module "image"',
+            description: 'Double Check If Image Size has a width:1440 & height:592',
             icon:ImImage
         })
     ]
