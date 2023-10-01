@@ -1,3 +1,4 @@
+import { ImImage } from "react-icons/im";
 import { defineType, defineField } from "sanity";
 
 // The SinglColumSchema -> SingleColumnModule //
@@ -22,8 +23,10 @@ const SingleColumnSchema = defineType({
             options: {
                 hotspot: true
             },
+            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
             group: 'media',
-            description: 'This is where, you upload/update the single column module "image"'
+            description: 'This is where, you upload/update the single column module "image"',
+            icon:ImImage
         })
     ]
 });

@@ -40,6 +40,7 @@ const MultipleColumnSchema = defineType({
                             options: {
                                 hotspot: true
                             },
+                            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                             description: '',
                             fieldset:'firstRow',
                             group: 'rowOne',
@@ -53,6 +54,7 @@ const MultipleColumnSchema = defineType({
                             options: {
                                 hotspot: true
                             },
+                            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                             description: '',
                             fieldset:'firstRow',
                             group: 'rowOne',
@@ -86,6 +88,7 @@ const MultipleColumnSchema = defineType({
                                     options: {
                                         hotspot: true
                                     },
+                                    fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                                     description: '',
                                     fieldset:'secondRow',
                                     group: 'rowTwo'
@@ -98,6 +101,7 @@ const MultipleColumnSchema = defineType({
                                     options: {
                                         hotspot: true
                                     },
+                                    fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                                     description: '',
                                     fieldset:'secondRow',
                                     group: 'rowTwo'

@@ -50,7 +50,8 @@ import {IoArrowForward, IoImage} from 'react-icons/io5'
                             hotspot: true
                         },
                         group: 'media',
-                        icon:IoImage
+                        icon:IoImage,
+                        fields:[{name: 'alt', title: 'Alt Text', type:'string'}]
             
                     })
                 ],

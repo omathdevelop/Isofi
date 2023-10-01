@@ -17,6 +17,7 @@ const TeamCardSchema = defineType({
             options: {
                 hotspot: true
             },
+            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
             group: 'media',
             icon: IoImage,
             description: 'The Team Photo Goes Here'
@@ -47,7 +48,10 @@ const TeamCardSchema = defineType({
             type: 'image',
             options:{
                 hotspot: true
-            }
+            },
+            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+            group:'media'
+
         })
     ]
 });

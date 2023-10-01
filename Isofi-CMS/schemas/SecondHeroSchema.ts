@@ -74,6 +74,7 @@ fieldsets: [{name: 'columnOne', title: 'Column One', description: 'The Hero Cont
                     options: {
                         hotspot: true
                     },
+                    fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
                     group: 'media',
         
                 })
