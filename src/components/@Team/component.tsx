@@ -4,8 +4,8 @@ import { AnyView } from '../../design/@AppView/component';
 import TeamCard from '../@TeamCard/component';
 
 const Team = ({isMobile}:{isMobile?:boolean}):React.JSX.Element => {
-   const isTeam = false;
-   return (<>
+
+return (<>
    {/* {isMobile  &&  */}
    <TeamImageView setTeamImageUrl={BackGroundTexture}>
     <AnyView className={'team-card'}>

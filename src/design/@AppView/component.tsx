@@ -18,7 +18,7 @@ const TopView = styled(motion.div)`
 `
 const View = styled(motion.main)`
     max-width:100rem;
-    height: auto;
+    height: 100vh;
     overflow-x: hidden;
     background: #CED2DA;
     position: relative;

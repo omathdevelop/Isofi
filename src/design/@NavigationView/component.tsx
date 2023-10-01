@@ -6,7 +6,7 @@ const HeaderView = styled(motion.header)`
     height: var(--theme-nav-height);
     background: var(--theme-nav-bg);
     position: sticky;
-    top: -5rem;
+    top: 0;
     left: 0;
     z-index: 1;
 `
