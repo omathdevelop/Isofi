@@ -20,8 +20,6 @@ const Root = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {  isXtraSmall, isSmall, isMedium  } = useResponsive();
   const isMobile = !isMedium;
-  const isOldMobile = isXtraSmall && !isSmall;
-  
   return (
     <View>
       <NaviGationModule message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>
