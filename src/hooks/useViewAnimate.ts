@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setIsViewAnimate } from '../context/@redux/@slices/slice';
+import { setIsViewAnimate } from '../context/@redux/@slices/slices';
 import { onIsViewAnimateSelector } from '../context/@redux/@selector/selector';
 import { VIEW_ANIMATION, VIEW_ANIMATION_SUPPORTER } from "../constants/animation";
 import type { UseViewAnimate } from "../types/hooks";

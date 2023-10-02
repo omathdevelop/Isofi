@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Outlet } from 'react-router-dom';
 import { useResponsive, configResponsive} from 'ahooks';
 import { useSelector } from 'react-redux';
@@ -14,11 +15,14 @@ import { ImageModule } from '../../components/@Background/component';
 import TeamCardModule from '../../components/@TeamCard/component';
 import TeamModule from '../../components/@Team/component';
 import FooterModule from '../../components/@Footer/component';
+import { useMultipleColumn, useImageModule } from '../../data/hooks';
 const Root = () => {
+  useMultipleColumn();
+  useImageModule();
   const isMenuOpen = useSelector(onIsMenuOpenSelector);
   configResponsive({ isXtraSmall: 0, isSmall: 380, isMedium: 768, isLarge: 820, isXtraLarge: 1200 });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const {  isXtraSmall, isSmall, isMedium  } = useResponsive();
+  const {  isMedium  } = useResponsive();
   const isMobile = !isMedium;
   return (
     <View>

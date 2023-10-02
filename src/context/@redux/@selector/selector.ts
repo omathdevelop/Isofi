@@ -1,7 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../@reducer/reducers";
 const StateMangementReducer = (state: RootState) => state.stateManagement;
-
 const onUrlSelector = createSelector(
     [StateMangementReducer],
     (UrlSlice) => UrlSlice.url
@@ -16,4 +15,9 @@ const onIsViewAnimateSelector = createSelector(
     [StateMangementReducer],
     (isViewAnimateSlice) => isViewAnimateSlice.isViewAnimate
 )
-export { onUrlSelector, onIsMenuOpenSelector, onIsViewAnimateSelector };
+const onNaviGationSelector = createSelector(
+    [StateMangementReducer],
+    (navigationSlice) => navigationSlice.navigation
+)
+
+export { onUrlSelector, onIsMenuOpenSelector, onIsViewAnimateSelector, onNaviGationSelector };

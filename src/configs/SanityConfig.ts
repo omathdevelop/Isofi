@@ -4,8 +4,7 @@ const SanityConfig = createClient({
     projectId:'6zrzzqz7',
     dataset:'production',
     useCdn:true,
-    perspective: 'published'
-
+    apiVersion:'v2021-10-21'
 })
 
 const BuildImage = ImageUrlBuilder(SanityConfig);

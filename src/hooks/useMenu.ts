@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setIsMenuOpen } from '../context/@redux/@slices/slice';
+import { setIsMenuOpen } from '../context/@redux/@slices/slices';
 import { onIsMenuOpenSelector } from '../context/@redux/@selector/selector';
 const useMenu = () => {
     const dispatch = useDispatch();
