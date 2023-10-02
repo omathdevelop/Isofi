@@ -37,8 +37,8 @@ const Query = {
     }`,
     multipleColumn: `*[ _type == 'multipleColumn'] {
         _id,
-        "firstColummageOne": firstColumnImageOne.asset->url,
-        "alt": firstColummageOne.alt,
+        "firstColumnImageOne": firstColumnImageOne.asset->url,
+        "alt": firstColumnImageOne.alt,
         firstColumnOneText,
         firstColumnTwoText,
         "firstColumnImageTwo": firstColumnImageTwo.asset->url,
@@ -59,10 +59,10 @@ const Query = {
     teamCard: `*[ _type == 'teamCard'] {
         _id,
         description,
-        "image":image.asset->url,
-        "alt":image.alt,
+        "photo":photo.asset->url,
+        "alt":photo.alt,
         tagline,
-        teamName,
+        name,
         "teamCardBackGround": teamCardBackGround.asset->url,
         "alt":teamCardBackGround.alt
     }`,
