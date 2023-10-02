@@ -33,8 +33,8 @@ const MultipleColumnSchema = defineType({
                      group: 'rowOne',
 
                 }),
-                        {
-                            name: 'firstColummageOne',
+                        defineField({
+                            name: 'firstColumnImageOne',
                             title:'Image One',
                             type: 'image',
                             options: {
@@ -46,9 +46,9 @@ const MultipleColumnSchema = defineType({
                             description: 'Double Check If Image Size has a width:720 & height:573',
 
 
-                        },
-                        {
-                            name: 'firstColumnmageTwo',
+                        }),
+                        defineField({
+                            name: 'firstColumnImageTwo',
                             title:'Image Two',
                             type: 'image',
                             options: {
@@ -60,7 +60,7 @@ const MultipleColumnSchema = defineType({
                             description: 'Double Check If Image Size has a width:720 & height:573',
 
 
-                        },
+                        }),
                         defineField({
                             name: 'secondColumnOneText',
                             title: 'First Text',
@@ -81,7 +81,7 @@ const MultipleColumnSchema = defineType({
                             group: 'rowTwo'
 
                         }),
-                                {
+                                defineField({
                                     name: 'secondColumnImageOne',
                                     title:'Image One',
                                     type: 'image',
@@ -94,8 +94,8 @@ const MultipleColumnSchema = defineType({
                                     description: 'Double Check If Image Size has a width:720 & height:573',
 
 
-                                },
-                                {
+                                }),
+                                defineField({
                                     name: 'secondColumnImageTwo',
                                     title:'Image Two',
                                     type: 'image',
@@ -107,7 +107,7 @@ const MultipleColumnSchema = defineType({
                                     group: 'rowTwo',
                                     description: 'Double Check If Image Size has a width:720 & height:573',
 
-                                }
+                                })
             ]
                
 });
