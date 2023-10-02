@@ -1,5 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore } from 'redux-persist';
+import { 
+    persistStore,
+    FLUSH,
+    REHYDRATE,
+    PAUSE,
+    PERSIST,
+    PURGE,
+    REGISTER
+ } from 'redux-persist';
 import logger from 'redux-logger';
 import type { Middleware } from 'redux'
 import { RootReducer } from "./@reducer/reducers";
@@ -10,7 +18,9 @@ const Store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware(
             {
-                serializableCheck: { ignoreActions: true },
+                serializableCheck: {
+                    ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+                }
                 // immutableCheck: isDev && false
             }
         ).concat(middleWares)

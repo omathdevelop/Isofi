@@ -1,95 +1,121 @@
 import { SanityConfig } from "../configs/SanityConfig";
 import Query from "./Queries";
-import type { FirstHeroDataState, ImageModuleDataState, NaviGationDataState, SecondHeroDataState, SingleColumnDataState } from "./Types";
+import type { AppUrlDataState, FirstHeroDataState, FooterDataState, HubSpotFormDataState, ImageModuleDataState, NaviGationDataState, PrivacyPolicyDataState, SecondHeroDataState, SingleColumnDataState, SocialAccountDataState, TermsAndServiceDataState } from "./Types";
 const onNaviGationData = async () => {
-    const data = await SanityConfig.fetch(Query.naviagtion).then((data: NaviGationDataState[]) => {
+    const data = await SanityConfig.fetch(Query.naviagtion).then((data: NaviGationDataState) => {
         return data;
-    }).catch(() => new Error(`******ERROR****** @onNaviGationData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
 
     return data;
 };
 const onFirstHeroData = async () => {
-    const data = await SanityConfig.fetch(Query.firstHero).then((data:FirstHeroDataState<string>[]) => {
+    const data = await SanityConfig.fetch(Query.firstHero).then((data:FirstHeroDataState<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onFirstHeroData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onSecondHeroData = async () => {
-    const data = await SanityConfig.fetch(Query.secondHero).then((data:SecondHeroDataState<string>[]) => {
+    const data = await SanityConfig.fetch(Query.secondHero).then((data:SecondHeroDataState<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onSecondHeroData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onSingleColumnData = async () => {
-    const data = await SanityConfig.fetch(Query.singleColumn).then((data:SingleColumnDataState<string, Array<string>>[]) => {
+    const data = await SanityConfig.fetch(Query.singleColumn).then((data:SingleColumnDataState<string, Array<string>>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onSingleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onMultipleColumnData = async () => {
-    const data = await SanityConfig.fetch(Query.multipleColumn).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.multipleColumn).then((data:object) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onImageModuleData = async () => {
-    const data = await SanityConfig.fetch(Query.imageModule).then((data:ImageModuleDataState[]) => {
+    const data = await SanityConfig.fetch(Query.imageModule).then((data:ImageModuleDataState) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onImageModuleData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onTeamCardData = async () => {
     const data = await SanityConfig.fetch(Query.teamCard).then((data:Array<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onTeamCardData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onHubSpotFormData = async () => {
-    const data = await SanityConfig.fetch(Query.hubSpotForm).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.hubSpotForm).then((data:HubSpotFormDataState<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onAppUrlData = async () => {
-    const data = await SanityConfig.fetch(Query.appLink).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.appLink).then((data:AppUrlDataState<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onFooterData = async () => {
-    const data = await SanityConfig.fetch(Query.footer).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.footer).then((data:FooterDataState<string, Array<string>>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onSocialAccountData = async () => {
-    const data = await SanityConfig.fetch(Query.socialAccount).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.socialAccount).then((data:SocialAccountDataState<string>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onSocialAccountData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onTermsAndServiceData = async () => {
-    const data = await SanityConfig.fetch(Query.termsOfService).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.termsOfService).then((data:TermsAndServiceDataState<string, Array<string>>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 const onPrivacyPolicyData = async () => {
-    const data = await SanityConfig.fetch(Query.privacyPolicy).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.privacyPolicy).then((data:PrivacyPolicyDataState<string, Array<string>>) => {
         if(!data) return;
         return data
-    }).catch(() => new Error(`******ERROR****** @onMultipleColumnData`));
+    }).catch(() => {
+        console.log('*******Error******')
+    });
     return data;
 };
 

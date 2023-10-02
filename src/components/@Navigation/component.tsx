@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { onNaviGationSelector } from "../../context/@redux/@selector/selector";
 import useMenu from "../../hooks/useMenu";
 import { HeaderView, NavView } from "../../design/@NavigationView/component";
 import { UnorderView, ListView, TextView, TopView } from "../../design/@AppView/component";
@@ -6,8 +8,11 @@ import Button from "../@Button/component";
 import Logo from "../@Logo/component";
 import { Menu } from "./@Shared/component";
 import { BUTTON_TYPE_CLASSES } from "../../constants/button";
+
 const NaviGation = ({ message }: { message?: string }) => {
-    const {onMenuOpen} = useMenu();
+    const navigation_data = useSelector(onNaviGationSelector);
+    console.log(navigation_data);
+    const { onMenuOpen } = useMenu();
     const onMessage = () => {
         alert(message);
         setTimeout(() => {

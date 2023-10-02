@@ -15,10 +15,7 @@ import { ImageModule } from '../../components/@Background/component';
 import TeamCardModule from '../../components/@TeamCard/component';
 import TeamModule from '../../components/@Team/component';
 import FooterModule from '../../components/@Footer/component';
-import { useMultipleColumn, useImageModule } from '../../data/hooks';
 const Root = () => {
-  useMultipleColumn();
-  useImageModule();
   const isMenuOpen = useSelector(onIsMenuOpenSelector);
   configResponsive({ isXtraSmall: 0, isSmall: 380, isMedium: 768, isLarge: 820, isXtraLarge: 1200 });
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

@@ -1,7 +1,7 @@
 
 const Query = {
     naviagtion: `
-    *[ _type == 'navigation'] {
+    *[ _type == 'navigation'][0] {
          _id,
         logo,
         isMenu,
@@ -10,7 +10,7 @@ const Query = {
         playlist
     }
     `,
-    firstHero: `*[ _type == 'firstHero']{
+    firstHero: `*[ _type == 'firstHero'][0]{
         _id,
    "HeroImage": HeroImage.asset->url,
     "alt": HeroImage.alt,
@@ -19,7 +19,7 @@ const Query = {
     ordinaryColorText,
     whiteColorText
     }`,
-    secondHero: `*[ _type == 'secondHero']{
+    secondHero: `*[ _type == 'secondHero'][0]{
     _id,
     "HeroImage": HeroImage.asset->url,
     "alt": HeroImage.alt,
@@ -29,13 +29,13 @@ const Query = {
     secondText,
     thirdText
     }`,
-    singleColumn: `*[ _type == 'singleColumn'] { 
+    singleColumn: `*[ _type == 'singleColumn'][0] { 
         _id,
         "singleColumnImage": singleColumnImage.asset->url,
         "alt": singleColumnImage.alt,
         content
     }`,
-    multipleColumn: `*[ _type == 'multipleColumn'] {
+    multipleColumn: `*[ _type == 'multipleColumn'][0] {
         _id,
         "firstColumnImageOne": firstColumnImageOne.asset->url,
         "alt": firstColumnImageOne.alt,
@@ -51,7 +51,7 @@ const Query = {
         secondColumnTwoText
 
     }`,
-    imageModule: `*[ _type == 'imageModule'] {
+    imageModule: `*[ _type == 'imageModule'][0] {
         _id,
         "image": image.asset->url,
         "alt":image.alt
@@ -66,15 +66,15 @@ const Query = {
         "teamCardBackGround": teamCardBackGround.asset->url,
         "alt":teamCardBackGround.alt
     }`,
-    hubSpotForm: `*[ _type == 'hubSpotForm'] {
+    hubSpotForm: `*[ _type == 'hubSpotForm'][0] {
         _id,
         hubSpotForm
     }`,
-    appLink: `*[ _type == 'appLink'] {
+    appLink: `*[ _type == 'appLink'][0] {
         _id,
         applink
     }`,
-    footer: ` [ _type == 'footer'] {
+    footer: ` *[ _type == 'footer'][0] {
          _id,
          content,
          copyRightInfo,
@@ -82,7 +82,7 @@ const Query = {
          policy,
          serviceTerm
     }`,
-    socialAccount: `[ _type == 'socialAccount'] {
+    socialAccount: `*[ _type == 'socialAccount'][0] {
         _id,
         facebook,
         facebookUrl,
@@ -95,11 +95,11 @@ const Query = {
         youtube,
         youtubeUrl
     }`,
-    termsOfService: ` [ _type == 'termsOfService'] {
+    termsOfService: ` *[ _type == 'termsOfService'][0] {
         _id,
         content
     }`,
-    privacyPolicy: ` [ _type == 'privacyPolicy'] {
+    privacyPolicy: ` *[ _type == 'privacyPolicy'][0] {
         _id,
         content
     }`

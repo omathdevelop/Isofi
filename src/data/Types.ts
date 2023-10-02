@@ -42,28 +42,51 @@ type ImageModuleDataState = {
     image:string
     alt:string
 }
-
-
-// type TeamCardDataState<T> = {
-//    image:T
-//    alt:T
-
-// }
-// type MultipleColumnDataState<T> = {
-//     _id:T
-//     firstColumnImageOne:T
-//     alt: T
-//     firstColumnImageTwo:{
-//         alt:T
-//     }
-    
-// }
-
+type SocialAccountDataState<T> = {
+        _id:T
+        facebook:T
+        facebookUrl:T
+        instagram:T
+        instagramUrl:T
+        twitter:T
+        twitterUrl:T
+        tiktok:T
+        tiktokUrl:T
+        youtube:T
+        youtubeUrl:T
+}
+type FooterDataState<T, A> = {
+    _id:T
+    content:A[]
+    copyRightInfo:T
+    isofiLogo:T
+    policy:T
+    serviceTerm:T
+}
+type AppUrlDataState<T> = {
+    _id:T
+    applink:T
+}
+type HubSpotFormDataState<T> = {
+    _id:T
+    hubSpotForm:T
+}
+type TermsAndServiceDataState<T, A> = {
+    _id:T
+    content:A[]
+}
+type PrivacyPolicyDataState<T, A> = {
+    _id:T
+    content:A[]
+}
 
 
 
 export type { 
     NaviGationDataState, FirstHeroDataState,
      SecondHeroDataState, SingleColumnDataState, 
-     ImageModuleDataState
+     ImageModuleDataState,SocialAccountDataState,
+     FooterDataState, HubSpotFormDataState, 
+     AppUrlDataState, TermsAndServiceDataState,
+     PrivacyPolicyDataState
      };
