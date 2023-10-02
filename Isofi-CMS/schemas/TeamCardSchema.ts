@@ -15,7 +15,8 @@ const TeamCardSchema = defineType({
             name:'isSingleTeam',
             title:'Switch To Single Team Card',
             type: 'boolean',
-            description: 'This can be use to switch from multiple team card to single team card'
+            description: 'This can be use to switch from multiple team card to single team card',
+            group: 'single'
 
         }),
         defineField({
