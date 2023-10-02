@@ -9,9 +9,9 @@ const Footer = ({isMobile}:{isMobile:boolean}) => (
   <FooterView>
     <AnyView className={'logo-with-social'}>
       {isMobile?(
-        <Logo isMobileFooterLogo={isMobile}/>
+        <Logo isMobileFooterLogo={isMobile} logo={'isofi'}/>
       ):(
-        <Logo isFooterLogo={true}/>
+        <Logo isFooterLogo={true} logo={'isofi'}/>
 
       )}
    <Content/>

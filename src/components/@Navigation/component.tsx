@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useSelector } from "react-redux";
 import { onNaviGationSelector } from "../../context/@redux/@selector/selector";
 import useMenu from "../../hooks/useMenu";
@@ -22,7 +23,7 @@ const NaviGation = ({ message }: { message?: string }) => {
     return (
         <HeaderView>
             <NavView>
-                <Logo />
+                <Logo logo={'isofi'} />
                 <UnorderView setOrder={'mobile'}>
                     <ListView><TextView className={'items'}>menuone</TextView></ListView>
                     <ListView><TextView className={'items'}>menutwo</TextView></ListView>

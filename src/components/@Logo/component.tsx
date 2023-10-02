@@ -16,12 +16,12 @@ const MobileFooterLogoStyles:CSSProperties = {
     fontWeight:300,
     lineHeight:'normal'
 };
-const Logo = ({isFooterLogo, isMobileFooterLogo}:{isFooterLogo?:boolean, isMobileFooterLogo?:boolean}) =>  {
+const Logo = ({isFooterLogo, isMobileFooterLogo, logo}:{isFooterLogo?:boolean, isMobileFooterLogo?:boolean, logo:string}) =>  {
    const navigate = useNavigate();
    const onHome = ()  => navigate('/');
     if(isFooterLogo){
         return (<LogoView onClick={onHome}>
-            <TextView className={'logo'} style={FooterLogoStyles}>isofi</TextView>
+            <TextView className={'logo'} style={FooterLogoStyles}>{logo}</TextView>
             </LogoView>
             )
     }
