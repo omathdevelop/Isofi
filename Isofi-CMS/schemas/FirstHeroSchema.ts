@@ -52,7 +52,7 @@ import {IoArrowForward, IoImage} from 'react-icons/io5'
                         group: 'media',
                         icon:IoImage,
                         description: 'Double Check If Image Size has a width:1440 & height:615',
-                        fields:[{name: 'alt', title: 'Alt Text', type:'string'}]
+                        fields:[{name: 'alt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}]
             
                     })
                 ],

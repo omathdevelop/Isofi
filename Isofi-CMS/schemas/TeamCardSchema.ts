@@ -1,5 +1,6 @@
 import { defineType, defineField } from "sanity";
 import {IoCard, IoImage} from 'react-icons/io5'
+import { ImSwitch } from "react-icons/im";
 // TeamCardSchema -> TeamCardModule //
 
 const TeamCardSchema = defineType({
@@ -8,8 +9,15 @@ const TeamCardSchema = defineType({
     type: 'document',
     icon: IoCard,
     description: 'A Team card, that you can find below the imageModule',
-    groups: [{name: 'media', title: 'Media'}],
+    groups: [{name: 'media', title: 'Media'}, {name: 'single', title: 'Toggle Team Card', icon: ImSwitch}],
     fields: [
+        defineField({
+            name:'isSingleTeam',
+            title:'Switch To Single Team Card',
+            type: 'boolean',
+            description: 'This can be use to switch from multiple team card to single team card'
+
+        }),
         defineField({
             name: 'photo',
             title: 'Upload Team Photo',
@@ -17,7 +25,7 @@ const TeamCardSchema = defineType({
             options: {
                 hotspot: true
             },
-            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+            fields:[{name: 'teamPhotoAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this team photo for screen reader sake'}],
             group: 'media',
             icon: IoImage,
             description: 'Double Check If Image Size has a width:384 & height:235',
@@ -50,7 +58,7 @@ const TeamCardSchema = defineType({
             options:{
                 hotspot: true
             },
-            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+            fields:[{name: 'teamCardBackGroundAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
             group:'media',
             description: 'Double Check If Image Size has a width:1440 & height:684',
 

@@ -23,7 +23,7 @@ const SingleColumnSchema = defineType({
             options: {
                 hotspot: true
             },
-            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+            fields:[{name: 'alt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
             group: 'media',
             description: 'Double Check If Image Size has a width:1440 & height:592',
             icon:ImImage

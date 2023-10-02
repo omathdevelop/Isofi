@@ -40,7 +40,7 @@ const MultipleColumnSchema = defineType({
                             options: {
                                 hotspot: true
                             },
-                            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+                            fields:[{name: 'firstColumnImageOneAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
                             fieldset:'firstRow',
                             group: 'rowOne',
                             description: 'Double Check If Image Size has a width:720 & height:573',
@@ -54,7 +54,7 @@ const MultipleColumnSchema = defineType({
                             options: {
                                 hotspot: true
                             },
-                            fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+                            fields:[{name: 'firstColumnImageTwoAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
                             fieldset:'firstRow',
                             group: 'rowOne',
                             description: 'Double Check If Image Size has a width:720 & height:573',
@@ -88,7 +88,7 @@ const MultipleColumnSchema = defineType({
                                     options: {
                                         hotspot: true
                                     },
-                                    fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+                                    fields:[{name: 'secondColumnImageOneAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
                                     fieldset:'secondRow',
                                     group: 'rowTwo',
                                     description: 'Double Check If Image Size has a width:720 & height:573',
@@ -102,7 +102,7 @@ const MultipleColumnSchema = defineType({
                                     options: {
                                         hotspot: true
                                     },
-                                    fields:[{name: 'alt', title: 'Alt Text', type:'string'}],
+                                    fields:[{name: 'secondColumnImageTwoAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
                                     fieldset:'secondRow',
                                     group: 'rowTwo',
                                     description: 'Double Check If Image Size has a width:720 & height:573',
