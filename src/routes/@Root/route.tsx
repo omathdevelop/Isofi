@@ -23,7 +23,7 @@ const Root = () => {
   const isMobile = !isMedium;
   return (
     <View>
-      <NaviGationModule message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>
+      <NaviGationModule />
       <Outlet />
           <FirstHeroModule />
           <SecondHeroModule />
@@ -45,3 +45,5 @@ const Root = () => {
 };
 
 export default Root;
+
+// message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}

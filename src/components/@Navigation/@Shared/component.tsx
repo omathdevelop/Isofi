@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 import { 
     onIsMenuOpenSelector, onIsMenuItemSelector, 
-    onMenuItemSelector, onButtonTextSelector
+    onMenuItemSelector, onButtonTextSelector, onAppUrlSelector
   } from '../../../context/@redux/@selector/selector';
 import useViewAnimate from '../../../hooks/useViewAnimate';
 import Logo from '../../@Logo/component';
 import { PlayListButtonVariant } from '../../../design/@ButtonView/component';
 import { MobileHeaderView, MobileNavView } from '../../../design/@NavigationView/component';
 import { AnyView, TextView, UnorderView, ListView } from '../../../design/@AppView/component';
-import type { MenuItemTyping } from '../../../data/Types';
+import type { MenuItemTyping, AppUrlDataState } from '../../../data/Types';
 const Menu = () => {
     return (
         <motion.svg  xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -18,21 +18,18 @@ const Menu = () => {
     )
 };
 
-const MobileMenu = ({message}: {message:string}) => {
+const MobileMenu = () => {
     const isMenuItem  = useSelector(onIsMenuItemSelector);
     const menuItem = useSelector(onMenuItemSelector);
     const buttonText = useSelector(onButtonTextSelector);
+    const appUrl = useSelector(onAppUrlSelector);
+    const {playlist} = buttonText as {playlist:string, signup:string};
     console.log(isMenuItem, menuItem, buttonText);
     const {fadeInsideAnimate} = useViewAnimate({animateType: 'fadeInside', delay:'0.5s', prefixes: 'faster'})
 
     const isMenuOpen = useSelector(onIsMenuOpenSelector);
-     const onMessage = () => {
-        alert(message);
-        setTimeout(() => {
-         window.open('https://isofi-cms-studio.netlify.app/');
-        }, 2000)
-    };
-     const isMenuOpenOperation = `${isMenuOpen && fadeInsideAnimate} `
+     const isMenuOpenOperation = `${isMenuOpen && fadeInsideAnimate} `;
+     const onSelfMadeNavigator = (data:string) => window.open(data);
      return (
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         <MobileHeaderView  className={isMenuOpenOperation}>
@@ -53,10 +50,12 @@ const MobileMenu = ({message}: {message:string}) => {
         )
         })}
         </>
-    )}
-               <AnyView>
-                <PlayListButtonVariant onClick={onMessage}>{buttonText?.playlist}</PlayListButtonVariant>
-               </AnyView>
+    )}            {appUrl.map((state:AppUrlDataState<string>) => {
+        const {_id, applink} = state;
+        return <AnyView key={_id}>
+            <PlayListButtonVariant onClick={() => onSelfMadeNavigator(applink)}>{playlist}</PlayListButtonVariant>
+        </AnyView>
+     })}
 </MobileNavView>
   </AnyView>
 {/* <AnyView className="footer">

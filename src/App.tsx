@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import RootRoute from './routes/@Root/route';
 import PrivacyPolicyRoute from './routes/@PrivacyPolicy/component';
 import TermsAndServiceRoute from './routes/@TermsAndService/component';
+import useInspect from './hooks/useInspect';
 import {
     useNaviGation, useMultipleColumn, useSingleColumn,
     useHubSpotForm, useAppUrl, useTeamCard, useTermsAndService,
@@ -23,6 +24,7 @@ const App = () => {
     useSocialAccount();
     useTermsAndService();
     usePrivacyPolicy();
+    useInspect();
     return (
         <Routes>
             <Route>
