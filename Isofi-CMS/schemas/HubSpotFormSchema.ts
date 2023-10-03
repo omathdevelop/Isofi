@@ -1,10 +1,11 @@
 import { defineType, defineField } from "sanity";
-import { IoLink } from "react-icons/io5";
+import { FaHubspot } from "react-icons/fa6";
 
 const HubSpotFormSchema = defineType({
     name: 'hubSpotForm',
     title: 'HubSpot Form',
     type: 'document',
+    icon:FaHubspot,
     fields: [
         defineField({
             name: 'hubSpotForm',
@@ -13,7 +14,6 @@ const HubSpotFormSchema = defineType({
             validation: Rule => Rule.uri({
                 scheme: ['https']
             }).warning('link  not secure, please check if "https" is included'),
-            icon:IoLink
         })
     ]
 });

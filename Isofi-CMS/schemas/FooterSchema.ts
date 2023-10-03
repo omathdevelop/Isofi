@@ -1,5 +1,6 @@
 import { defineType, defineField } from "sanity";
-import { IoArrowForward, IoLink, IoLogoFacebook, IoLogoInstagram, IoLogoTiktok, IoLogoTwitter, IoLogoYoutube } from 'react-icons/io5'
+import {TbComponents} from 'react-icons/tb';
+import {FcPrivacy, FcServices} from 'react-icons/fc';
 
 //  FooterSchema -> FooterModule //
 
@@ -7,22 +8,26 @@ const FooterSchema = defineType({
     name: 'footer',
     title: 'Footer',
     type: 'document',
-    icon: IoArrowForward,
+    icon: TbComponents,
     description: 'You can use this, to edit all content in the "Footer Module"',
     groups: [
-        { name: 'footer', title: 'Footer' },
-        { name: 'terms', title: 'Terms Of Service' },
-        { name: 'policy', title: 'Privacy Policy' }
+        { name: 'footer', title: 'Footer', icon:TbComponents },
+        { name: 'terms', title: 'Terms Of Service', icon:FcServices},
+        { name: 'policy', title: 'Privacy Policy', icon:FcPrivacy },
+        { name: 'logo', title: 'Logo', icon:TbComponents }
+
 
     ],
     fields: [
         defineField({
+            readOnly:true,
             name: 'isofiLogo',
             title: 'Isofi Logo',
             type: 'string',
             validation: Rule => Rule.required().warning('isofi Logo is required'),
-            initialValue: 'Isofi',
-            group: 'footer'
+            initialValue: 'isofi',
+            group: 'logo',
+            description:'Cannot edit this'
         }),
         defineField({
             name: 'content',

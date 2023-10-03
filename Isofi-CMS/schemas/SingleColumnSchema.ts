@@ -1,5 +1,6 @@
 import { ImImage } from "react-icons/im";
 import { defineType, defineField } from "sanity";
+import {BsColumnsGap} from 'react-icons/bs';
 
 // The SinglColumSchema -> SingleColumnModule //
 
@@ -8,6 +9,7 @@ const SingleColumnSchema = defineType({
     title: 'Single Column',
     type: 'document',
     description: 'This is the Single Column Module',
+    icon:BsColumnsGap,
     groups: [{name: 'media', title: 'Media'}],
     fields: [
         defineField({

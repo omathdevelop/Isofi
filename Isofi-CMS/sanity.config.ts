@@ -1,6 +1,5 @@
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemas/RootSchema'
 import { CustomStructure, ViewSetting } from './setting/StudioSetting';
 
@@ -16,7 +15,7 @@ export default defineConfig({
       name: name, title: title, icon: icon,
       structure: CustomStructure
     },
-  ), visionTool()],
+  )],
 
   schema: {
     types: schemaTypes,

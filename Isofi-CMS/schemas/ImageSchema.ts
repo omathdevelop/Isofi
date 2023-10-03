@@ -1,5 +1,6 @@
 import { defineType, defineField } from "sanity";
 import {IoImage } from 'react-icons/io5'
+import { ImImage } from "react-icons/im";
 
 // ImageSchema -> ImageModule //
 
@@ -7,7 +8,7 @@ const ImageSchema = defineType({
     name: 'imageModule',
     title: 'Image Module',
     type: 'document',
-    icon: IoImage,
+    icon: ImImage,
     description: 'Here, is the one & only "Image Module"',
     fields: [
         defineField({

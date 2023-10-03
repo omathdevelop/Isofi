@@ -12,13 +12,15 @@ import PrivacyPolicySchema from "./PrivacyPolicySchema";
 import HubSpotFormSchema from "./HubSpotFormSchema";
 import AppUrlSchema from "./AppUrlSchema";
 import SocialMediaAccountSchema from "./SocialMediaAccountSchema";
+import TeamCardBackGroundSchema from "./TeamCardBackGroundSchema";
 // Schema Types Definations -> RootSchema //
 
 export const schemaTypes = [
     NavigationSchema, ContentSchema,
     FirstHeroSchema, SecondHeroSchema,
     SingleColumnSchema, MultipleColumnSchema,
-    ImageSchema, TeamCardSchema,HubSpotFormSchema, AppUrlSchema,
+    ImageSchema, TeamCardSchema,TeamCardBackGroundSchema,
+    HubSpotFormSchema, AppUrlSchema,
     SocialMediaAccountSchema, FooterSchema,                           
-    TermOfServiceSchema, PrivacyPolicySchema,
+    TermOfServiceSchema, PrivacyPolicySchema
 ];

@@ -1,11 +1,12 @@
 import { IoLink } from "react-icons/io5";
 import { defineType, defineField } from "sanity";
-
+import {FaAppStore} from 'react-icons/fa6';
 
 const AppUrlSchema = defineType({
     name: 'appLink',
     title: 'Isofi App Link',
     type: 'document',
+    icon:FaAppStore,
     fields: [
         defineField({
             name: 'applink',

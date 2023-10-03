@@ -1,19 +1,20 @@
 import { defineType, defineField } from "sanity";
-import {IoCard, IoImage} from 'react-icons/io5'
-import { ImSwitch } from "react-icons/im";
+import { IoCard, IoImage } from 'react-icons/io5'
+import { ImSwitch, } from "react-icons/im";
+import { AiOutlineTeam } from 'react-icons/ai'
 // TeamCardSchema -> TeamCardModule //
 
 const TeamCardSchema = defineType({
     name: 'teamCard',
     title: 'Team Card',
     type: 'document',
-    icon: IoCard,
+    icon: AiOutlineTeam,
     description: 'A Team card, that you can find below the imageModule',
-    groups: [{name: 'media', title: 'Media'}, {name: 'single', title: 'Toggle Team Card', icon: ImSwitch}],
+    groups: [{ name: 'media', title: 'Media' }, { name: 'single', title: 'Toggle Team Card', icon: ImSwitch }],
     fields: [
         defineField({
-            name:'isSingleTeam',
-            title:'Switch To Single Team Card',
+            name: 'isSingleTeam',
+            title: 'Switch To Single Team Card',
             type: 'boolean',
             description: 'This can be use to switch from multiple team card to single team card',
             group: 'single'
@@ -26,7 +27,7 @@ const TeamCardSchema = defineType({
             options: {
                 hotspot: true
             },
-            fields:[{name: 'teamPhotoAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this team photo for screen reader sake'}],
+            fields: [{ name: 'teamPhotoAlt', title: 'Alt Text', type: 'string', description: 'Add some text that describe this team photo for screen reader sake' }],
             group: 'media',
             icon: IoImage,
             description: 'Double Check If Image Size has a width:384 & height:235',
@@ -51,19 +52,6 @@ const TeamCardSchema = defineType({
             title: 'Team Description',
             type: 'blockContent',
             initialValue: 'writing code is the only thing that matter to me!'
-        }),
-        defineField({
-            name: 'teamCardBackGround',
-            title: 'Team Card BackGround Image',
-            type: 'image',
-            options:{
-                hotspot: true
-            },
-            fields:[{name: 'teamCardBackGroundAlt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}],
-            group:'media',
-            description: 'Double Check If Image Size has a width:1440 & height:684',
-
-
         })
     ]
 });

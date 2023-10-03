@@ -1,17 +1,16 @@
 import { defineType, defineField } from "sanity";
-import { IoDocument } from 'react-icons/io5'
+import {FcServices} from 'react-icons/fc';
 const TermOfServiceSchema = defineType({
     name: 'termsOfService',
     title: 'Terms Of Service',
     type: 'document',
-    icon: IoDocument,
+    icon: FcServices,
     description: 'This is for the terms of service content page',
     fields: [
         defineField({
             name: 'content',
             title: 'Term Of Service Content Editor',
             type: 'blockContent',
-            icon: IoDocument,
             description: 'This is for the terms of service content page',
         })
     ]

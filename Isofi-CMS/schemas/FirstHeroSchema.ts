@@ -1,5 +1,7 @@
 import {defineType, defineField} from 'sanity';
-import {IoArrowForward, IoImage} from 'react-icons/io5'
+import {TbComponents} from 'react-icons/tb';
+import { ImImage } from 'react-icons/im';
+
 // The FirstHeroSchema  -> FirstHeroModule //
 //             title:'Privacy Policy Content Editor',
 
@@ -7,9 +9,9 @@ import {IoArrowForward, IoImage} from 'react-icons/io5'
     name: 'firstHero',
     title: 'The First Hero',
     type: 'document',
-    icon: IoArrowForward,
+    icon: TbComponents,
     description: 'This is the hero module below the navigation module',
-    groups: [{name: 'media', title: 'Media'}],
+    groups: [{name: 'media', title: 'Media', icon:ImImage}],
     fieldsets: [{name: 'firstHeroContent', title: 'The First Hero Contents'}, {name: 'thirdText', title: 'Third & White Text '}],
                 fields:[
                     defineField({
@@ -50,7 +52,6 @@ import {IoArrowForward, IoImage} from 'react-icons/io5'
                             hotspot: true
                         },
                         group: 'media',
-                        icon:IoImage,
                         description: 'Double Check If Image Size has a width:1440 & height:615',
                         fields:[{name: 'alt', title: 'Alt Text', type:'string', description: 'Add some text that describe this image for screen reader sake'}]
             

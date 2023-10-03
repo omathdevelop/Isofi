@@ -1,12 +1,16 @@
 import { defineType, defineField } from "sanity";
-
+import {FcOnlineSupport} from 'react-icons/fc';
 //  SocialMediaAccountSchema -> SocialMediaAccountModule //
 
 const SocialMediaAccountSchema = defineType({
     name: 'socialAccount',
-    title: 'Social Media Account',
+    title: 'Social Media ',
     type: 'document',
-    groups: [{name: 'socialAccount', title:'Social Media'}],
+    icon:FcOnlineSupport,
+    groups: [
+        {name: 'socialAccount', title:'Social Media'}
+],
+
     fields:[
           // FaceBook Account //
           defineField({
@@ -88,6 +92,24 @@ const SocialMediaAccountSchema = defineType({
         defineField({
             type: 'url', name: 'youtubeUrl',
             title: ' Your Channel Link', hidden: ({ document }) => !document?.youtube,
+            validation: Rule => Rule.uri({
+                scheme: ['https']
+            }).warning('link not secure, please check if "https" is included')
+
+
+        }),
+
+        // LinkedIn Account //
+
+        defineField({
+            type: 'string', name: 'linkedin',
+            title: 'LinkedIn Username',
+            description: 'Try enter your linkedIn name, and see magic happen in just a sec, 😄 lol',
+            
+        }),
+        defineField({
+            type: 'url', name: 'linkedInUrl',
+            title: ' Your LinkedIn Link', hidden: ({ document }) => !document?.linkedin,
             validation: Rule => Rule.uri({
                 scheme: ['https']
             }).warning('link not secure, please check if "https" is included')
