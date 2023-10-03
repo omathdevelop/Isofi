@@ -1,20 +1,22 @@
-import ImageColumnOneVariant from '../../../assets/texture.png';
-import ImageColumnTwo from '../../../assets/temp.png';
 import { AnyView, TextView, SpanView } from '../../../design/@AppView/component';
 import { ColumnView, ColumnOneImage, ColumnTwoImage } from '../../../design/@MultipleColumnView/component';
-const ColumnOne = () => {
+import type { MultipleColumnDataState } from '../../../data/Types';
+const ColumnOne = ({
+    firstColumnOneText, firstColumnTwoText,
+    firstColumnImageOne, firstColumnImageTwo
+}:Partial<MultipleColumnDataState<string>>) => {
     return (
         <>
          <ColumnView setDevice={'mobile'}>
-         <ColumnOneImage src={ImageColumnOneVariant}/>
-         <ColumnTwoImage src={ImageColumnTwo}/>
+         <ColumnOneImage src={firstColumnImageOne}/>
+         <ColumnTwoImage src={firstColumnImageTwo}/>
          <AnyView className={'texture-one'}> 
           <TextView>
               <SpanView options={'content'}> 
-              Remote and in-person sessions support hybrid and  flexible working  patterns 
+               {firstColumnOneText}
                 </SpanView>
            </TextView>
-           <TextView>with a fully HIPPA/HCPC  compliant platform.</TextView>
+           <TextView>{firstColumnTwoText}</TextView>
               </AnyView>
       </ColumnView>
          
@@ -23,19 +25,22 @@ const ColumnOne = () => {
     )
 };
 
-const ColumnTwo = () => {
+const ColumnTwo = ({
+    secondColumnOneText, secondColumnTwoText,
+    secondColumnImageOne, secondColumnImageTwo
+}:Partial<MultipleColumnDataState<string>>) => {
     return (
         <>
          <ColumnView >
-         <ColumnTwoImage src={ImageColumnTwo}/>
-            <ColumnOneImage src={ImageColumnOneVariant}/>
+         <ColumnTwoImage src={secondColumnImageOne}/>
+            <ColumnOneImage src={secondColumnImageTwo}/>
                 <AnyView className={'texture-two'}>
                 <TextView>
               <SpanView options={'content'}> 
-              Remote and in-person sessions support hybrid and  flexible working  patterns 
+               {secondColumnOneText}
                 </SpanView>
            </TextView>
-           <TextView>with a fully HIPPA/HCPC  compliant platform.</TextView>
+           <TextView>{secondColumnTwoText}</TextView>
                 </AnyView>
         </ColumnView>
         </>

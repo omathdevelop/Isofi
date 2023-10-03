@@ -6,7 +6,7 @@ import {
     useNaviGation, useMultipleColumn, useSingleColumn,
     useHubSpotForm, useAppUrl, useTeamCard, useTermsAndService,
     useImageModule, useFooter, useFirstHero, useSecondHero,
-    usePrivacyPolicy, useSocialAccount
+    usePrivacyPolicy, useSocialAccount, useSingleTeamCard
 } from './data/Hooks';
 const App = () => {
     useNaviGation();
@@ -18,6 +18,7 @@ const App = () => {
     useMultipleColumn();
     useImageModule();
     useTeamCard();
+    useSingleTeamCard();
     useFooter();
     useSocialAccount();
     useTermsAndService();

@@ -1,11 +1,15 @@
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
-import { onIsMenuOpenSelector } from '../../../context/@redux/@selector/selector';
+import { 
+    onIsMenuOpenSelector, onIsMenuItemSelector, 
+    onMenuItemSelector, onButtonTextSelector
+  } from '../../../context/@redux/@selector/selector';
 import useViewAnimate from '../../../hooks/useViewAnimate';
 import Logo from '../../@Logo/component';
 import { PlayListButtonVariant } from '../../../design/@ButtonView/component';
 import { MobileHeaderView, MobileNavView } from '../../../design/@NavigationView/component';
 import { AnyView, TextView, UnorderView, ListView } from '../../../design/@AppView/component';
+import type { MenuItemTyping } from '../../../data/Types';
 const Menu = () => {
     return (
         <motion.svg  xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -15,6 +19,10 @@ const Menu = () => {
 };
 
 const MobileMenu = ({message}: {message:string}) => {
+    const isMenuItem  = useSelector(onIsMenuItemSelector);
+    const menuItem = useSelector(onMenuItemSelector);
+    const buttonText = useSelector(onButtonTextSelector);
+    console.log(isMenuItem, menuItem, buttonText);
     const {fadeInsideAnimate} = useViewAnimate({animateType: 'fadeInside', delay:'0.5s', prefixes: 'faster'})
 
     const isMenuOpen = useSelector(onIsMenuOpenSelector);
@@ -30,17 +38,24 @@ const MobileMenu = ({message}: {message:string}) => {
         <MobileHeaderView  className={isMenuOpenOperation}>
  <AnyView className="main-content">
  <Logo/>
-
-
 <MobileNavView>
-<UnorderView setOrder={'desktop'}>
-                <ListView><TextView className={'items'}>menuone</TextView></ListView>
-                <ListView><TextView className={'items'}>menutwo</TextView></ListView>
-                <ListView><TextView className={'items'}>menuthree</TextView></ListView>
-                <ListView><TextView className={'items'}>menufour</TextView></ListView>
+    {isMenuItem  && (
+        <>
+        {menuItem.map((state:MenuItemTyping<string>) => {
+        const { _key, menuOne, menuTwo, menuThree, menuFour} = state;
+        return ( <UnorderView key={_key} setOrder={'desktop'}>
+                <ListView><TextView className={'items'}>{menuOne}</TextView></ListView>
+                <ListView><TextView className={'items'}>{menuTwo}</TextView></ListView>
+                <ListView><TextView className={'items'}>{menuThree}</TextView></ListView>
+                <ListView><TextView className={'items'}>{menuFour}</TextView></ListView>
                </UnorderView>
+
+        )
+        })}
+        </>
+    )}
                <AnyView>
-                <PlayListButtonVariant onClick={onMessage}>Create Playlist</PlayListButtonVariant>
+                <PlayListButtonVariant onClick={onMessage}>{buttonText?.playlist}</PlayListButtonVariant>
                </AnyView>
 </MobileNavView>
   </AnyView>

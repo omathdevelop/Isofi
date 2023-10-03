@@ -63,6 +63,9 @@ font-size: 1.2rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+&:hover{
+  color:var(--theme-hero-high-light_text);
+}
 cursor: pointer;
 @media (max-width:48rem){
 font-family: var(--theme-font-inter);

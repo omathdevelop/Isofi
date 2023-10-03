@@ -59,12 +59,24 @@ const Query = {
     teamCard: `*[ _type == 'teamCard'] {
         _id,
         description,
+        isSingleTeam,
         "photo":photo.asset->url,
-        "alt":photo.alt,
+        "teamPhotoAlt":photo.teamPhotoAlt,
         tagline,
         name,
         "teamCardBackGround": teamCardBackGround.asset->url,
-        "alt":teamCardBackGround.alt
+        "teamCardBackGroundAlt":teamCardBackGround.teamCardBackGroundAlt
+    }`,
+    singleTeamCard: `*[ _type == 'teamCard'  && isSingleTeam == true][0] {
+        _id,
+        description,
+        isSingleTeam,
+        "photo":photo.asset->url,
+        "teamPhotoAlt":photo.teamPhotoAlt,
+        tagline,
+        name,
+        "teamCardBackGround": teamCardBackGround.asset->url,
+        "teamCardBackGroundAlt":teamCardBackGround.teamCardBackGroundAlt
     }`,
     hubSpotForm: `*[ _type == 'hubSpotForm'][0] {
         _id,

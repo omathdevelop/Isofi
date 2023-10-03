@@ -14,12 +14,12 @@ const FooterView = styled(motion.div) <{ setDevice: 'destop' }>`
  align-items: center;
  flex-direction: column;
 
- .content p{
+ .content {
 font-family: var(--theme-font-gilroy);
 font-size: 1.2rem;
 font-style: normal;
 font-weight: 400;
-line-height: 1.95rem; /* 1.95rem */
+line-height: .75rem; /* 1.95rem */
 letter-spacing: -0.03rem;
 color:var(--theme-hero-high-light_text);
 
@@ -54,14 +54,13 @@ color: var(--theme-hero-high-light_text);
     display: flex;
     justify-content: center;
     align-items: center;
-    p{
+    p a{
         font-size: 1rem;
         font-style: normal;
         font-weight: 500;
         line-height: 1.5rem;
         font-family: var(--theme-font-inter);
         color: var(--theme-hero-high-light_text);
-
     }
 }
  }
@@ -99,27 +98,32 @@ color:var(--theme-hero-high-light_text);
         display: none;
         margin-left: 160%;
     }
-    .copywrite p{
-font-family: var(--theme-font-gilroy);
-font-size: 1.125rem;
-font-style: normal;
-font-weight: 700;
-line-height: 135%; /* 1.51875rem */
-letter-spacing: -0.01125rem;
-color: var(--theme-text);
-        margin-left:-60%;
-    }
-    .legal{
-    justify-content: right;
-    p a{
-font-family: var(--theme-font-gilroy);
-font-size: 1.125rem;
-font-style: normal;
-font-weight: 700;
-line-height: 135%; /* 1.51875rem */
-letter-spacing: -0.01125rem;
-color: var(--theme-text);
-    }
+    .rendered-helper{
+        width:100%;
+        .copywrite p{
+    font-family: var(--theme-font-gilroy);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%; /* 1.51875rem */
+    letter-spacing: -0.01125rem;
+    color: var(--theme-text);
+            margin-left:-60%;
+        };
+
+        .legal{
+        justify-content: right;
+        float: right;
+        p a{
+    font-family: var(--theme-font-gilroy);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 135%; /* 1.51875rem */
+    letter-spacing: -0.01125rem;
+    color: var(--theme-text);
+        }
+        }
     }
 
  }

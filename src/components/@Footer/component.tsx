@@ -1,17 +1,23 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
+import { onFooterSelector } from '../../context/@redux/@selector/selector';
 import { FooterView } from "../../design/@FooterView/component";
 import { AnyView, TextView, UrlView } from '../../design/@AppView/component';
 import SocialMediaAccount from '../@SociaAccount/component';
 import Logo from '../@Logo/component';
 import { Content, Email } from './@Shared/component';
-const Footer = ({isMobile}:{isMobile:boolean}) => (
+import type { FooterDataState } from '../../data/Types';
+const Footer = ({isMobile}:{isMobile:boolean}) => { 
+  const footerData = useSelector(onFooterSelector);
+ 
+ return (
 <React.Fragment>
   <FooterView>
     <AnyView className={'logo-with-social'}>
       {isMobile?(
-        <Logo isMobileFooterLogo={isMobile} logo={'isofi'}/>
+        <Logo isMobileFooterLogo={isMobile}/>
       ):(
-        <Logo isFooterLogo={true} logo={'isofi'}/>
+        <Logo isFooterLogo={true}/>
 
       )}
    <Content/>
@@ -21,18 +27,27 @@ const Footer = ({isMobile}:{isMobile:boolean}) => (
       <TextView className={'contact-desc'}>Contact Us</TextView>
       <AnyView className={'emails'}>
            <Email/>
-           <TextView>info@isofi.app</TextView>
+           <TextView><a href="mailto:info@isofi.app">info@isofi.app</a></TextView>
       </AnyView>
-    </AnyView>
-    <AnyView className={'copywrite'}>
-    © 2023 Isofi Limited - All rights reserved
-    </AnyView>
-    <AnyView className={'legal'}>
-        <TextView><UrlView to={'/termsandservice'}>Terms And Service</UrlView></TextView>|<TextView><UrlView to={'/privacypolicy'}>Privacy Policy</UrlView></TextView>
 
     </AnyView>
+    {footerData.map((state:FooterDataState<string, []>) => {
+        const {_id, copyRightInfo, policy, serviceTerm} = state;
+
+        return (<AnyView className={'rendered-helper'} key={_id}>
+    <AnyView className={'copywrite'}>
+    <TextView>©{copyRightInfo}</TextView>
+    </AnyView>
+    <AnyView className={'legal'}>
+        <TextView><UrlView to={'/termsandservice'}>{serviceTerm}</UrlView></TextView>|<TextView><UrlView to={'/privacypolicy'}>{policy}</UrlView></TextView>
+
+    </AnyView>
+
+           </AnyView>
+        )
+      })}
   </FooterView>
 </React.Fragment>
-)
+)}
 
 export default Footer;

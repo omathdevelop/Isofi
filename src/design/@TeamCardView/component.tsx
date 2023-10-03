@@ -67,15 +67,13 @@ color:var(--theme-text);
   };
 .team-content{
 padding: .25rem .5rem .25rem .5rem;
- p{
-  color:var(--theme-text);
+color:var(--theme-text);
 font-feature-settings: 'liga' off;
 font-family: var(--theme-font-inter);
 font-size: 0.875rem;
 font-style: normal;
 font-weight: 400;
 line-height: 1rem;
- }
 }
 
 @media (min-width:48rem){

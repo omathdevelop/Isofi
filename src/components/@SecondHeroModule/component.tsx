@@ -1,25 +1,35 @@
-import ImageTwo from '../../assets/fingerCross.png.png';
+import { useSelector } from 'react-redux';
+import { onSecondHeroSelector } from '../../context/@redux/@selector/selector';
 import { TextView,  AnyView, SpanView } from "../../design/@AppView/component";
 import {  SecondHeroImageView } from "../../design/@ImageView/component";
+import type { SecondHeroDataState } from '../../data/Types';
 const SecondHero = () => {
-
+ const secondHeroData = useSelector(onSecondHeroSelector);
     return (
         <>
-        <SecondHeroImageView  
-          setSecondHeroImageUrl={ImageTwo}
+         {secondHeroData.map((state:SecondHeroDataState<string>) => {
+           const {
+            _id, HeroImage, firstColumnTextOne,
+             firstText, secondColumnTextTwo,
+              secondText, thirdText
+            } = state;
+          return <SecondHeroImageView 
+        key={_id}
+          setSecondHeroImageUrl={HeroImage}
           >
           <AnyView className={'content'}>
              <AnyView className={'first-column'}>
-              <TextView>The workplace is changing</TextView>
-              <TextView> A new type of business is emerging.</TextView>
+              <TextView>{firstColumnTextOne}</TextView>
+              <TextView>{secondColumnTextTwo}</TextView>
              </AnyView>
              <AnyView className={'second-column'}>
-             <TextView>Businesses and employees, with new  ways of working and different values, are putting mental health at the centre of their ethos.</TextView>
-             <TextView>New ways of working need a new approach to mental health treatment and wellbeing</TextView>
-             <TextView> <SpanView options={'content'}>Isofi puts music at the centre of everything we do</SpanView></TextView>
+             <TextView>{firstText}</TextView>
+             <TextView>{secondText}</TextView>
+             <TextView> <SpanView options={'content'}>{thirdText}</SpanView></TextView>
              </AnyView>
           </AnyView>
           </SecondHeroImageView>
+         })}
         </>
     )
 };

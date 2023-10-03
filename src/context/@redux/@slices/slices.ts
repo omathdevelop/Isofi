@@ -30,6 +30,18 @@ const NaviGationSlice = createSlice(
         reducers: {
             setNavigation(state, action) {
                 state.navigation = action.payload
+            },
+            setIsMenuItem(state, action){
+                state.isMenuItem = action.payload
+            },
+            setMenuItems(state, action){
+                state.menuItem = action.payload
+            },
+            setButtonText(state, action){
+                state.buttonText = action.payload
+            },
+            setLogo(state, action){
+                state.logo = action.payload
             }
         }
 
@@ -108,6 +120,12 @@ const TeamCardSlice = createSlice(
         reducers: {
             setTeamCard(state, action) {
                 state.teamCard = action.payload
+            },
+            setSingleTeamCard(state, action){
+                state.singleTeamCard = action.payload
+            },
+            setTeamCardBackGround(state, action){
+                state.teamCardBackGround = action.payload
             }
         }
 
@@ -211,13 +229,23 @@ export const {
     setIsViewAnimate
 } = StateMangementSlice.actions;
 
-export const { setNavigation } = NaviGationSlice.actions;
+export const { 
+    setNavigation, setIsMenuItem,
+     setMenuItems, setButtonText, setLogo
+    } = NaviGationSlice.actions;
+    
 export const { setFirstHero } = FirstHeroSlice.actions;
 export const { setSecondHero } = SecondHeroSlice.actions;
 export const { setSingleColumn } = SingleColumnSlice.actions;
 export const { setMultipleColumn } = MultipleColumnSlice.actions;
 export const { setImageModule } = ImageModuleSlice.actions;
-export const { setTeamCard } = TeamCardSlice.actions;
+
+export const { 
+    setTeamCard, 
+    setSingleTeamCard,
+    setTeamCardBackGround 
+ } = TeamCardSlice.actions;
+
 export const { setFooter } = FooterSlice.actions;
 export const { setTermsAndService } = TermsAndServiceSlice.actions;
 export const { setPrivacyPolicy } = PrivacyPolicySlice.actions;

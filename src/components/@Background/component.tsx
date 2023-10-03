@@ -1,9 +1,15 @@
-import BackGround from '../../assets/background.png';
+import { useSelector } from 'react-redux';
+import { onImageModuleSelector } from '../../context/@redux/@selector/selector';
 import { BackGroundImageView } from "../../design/@ImageView/component";
-
+import type { ImageModuleDataState } from '../../data/Types';
 const BackGroundImage = () => {
+   const imageModuleData = useSelector(onImageModuleSelector);
    return (<>
-        <BackGroundImageView setBackGroundImageUrl={BackGround}/>
+       {imageModuleData.map((state:ImageModuleDataState) => {
+         const {_id, image} = state;
+         return  <BackGroundImageView key={_id} setBackGroundImageUrl={image}/>
+
+       })}
    </>)
 };
 

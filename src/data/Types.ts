@@ -1,4 +1,5 @@
 type MenuItemTyping<T> = {
+    _key:T
     menuOne:T
     menuTwo:T
     menuThree:T
@@ -79,6 +80,28 @@ type PrivacyPolicyDataState<T, A> = {
     _id:T
     content:A[]
 }
+type TeamCardDataState<T, B> = {
+    _id:T
+    name:T
+    tagline:T
+    photo:T
+    teamPhotoAlt:T
+    teamCardBackGround:T
+    teamCardBackGroundAlt:T
+    isSingleTeam:B
+    description:[]
+}
+type MultipleColumnDataState<T> = {
+    _id:T
+    firstColumnOneText:T
+    firstColumnTwoText:T
+    firstColumnImageOne:T
+    firstColumnImageTwo:T
+    secondColumnOneText:T
+    secondColumnTwoText:T
+    secondColumnImageOne:T
+    secondColumnImageTwo:T
+}
 
 
 
@@ -88,5 +111,6 @@ export type {
      ImageModuleDataState,SocialAccountDataState,
      FooterDataState, HubSpotFormDataState, 
      AppUrlDataState, TermsAndServiceDataState,
-     PrivacyPolicyDataState
+     PrivacyPolicyDataState, TeamCardDataState, MultipleColumnDataState,
+     MenuItemTyping
      };

@@ -33,6 +33,22 @@ const onNaviGationSelector = createSelector(
     [NaviGationReducer],
     (navigationSlice) => navigationSlice.navigation
 );
+const onIsMenuItemSelector = createSelector(
+    [NaviGationReducer],
+    (navigationSlice) => navigationSlice.isMenuItem
+);
+const onMenuItemSelector = createSelector(
+    [NaviGationReducer],
+    (navigationSlice) => navigationSlice.menuItem
+);
+const onButtonTextSelector = createSelector(
+    [NaviGationReducer],
+    (navigationSlice) => navigationSlice.buttonText
+);
+const onLogoSelector = createSelector(
+    [NaviGationReducer],
+    (navigationSlice) => navigationSlice.logo
+);
 const onFirstHeroSelector = createSelector(
     [FirstHeroReducer],
     (firstHeroSlice) => firstHeroSlice.firstHero
@@ -56,6 +72,14 @@ const onImageModuleSelector = createSelector(
 const onTeamCardSelector = createSelector(
     [TeamCardReducer],
     (teamCardSlice) => teamCardSlice.teamCard
+);
+const onSingleTeamCardSelector = createSelector(
+    [TeamCardReducer],
+    (teamCardSlice) => teamCardSlice.singleTeamCard
+);
+const onTeamCardBackGroundSelector = createSelector(
+    [TeamCardReducer],
+    (teamCardSlice) => teamCardSlice.teamCardBackGround
 );
 const onAppUrlSelector = createSelector(
     [AppUrlReducer],
@@ -83,12 +107,14 @@ const onSocialAccountSelector = createSelector(
 );
 export { 
     onUrlSelector, onIsMenuOpenSelector,
-     onIsViewAnimateSelector, onNaviGationSelector,
+     onIsViewAnimateSelector, onNaviGationSelector, onIsMenuItemSelector,
+     onMenuItemSelector, onButtonTextSelector,onLogoSelector,
      onFirstHeroSelector, onSecondHeroSelector,
      onSingleColumnSelector, onMultipleColumnSelector,
      onImageModuleSelector, onHubSpotFormSelector,
-     onAppUrlSelector, onTeamCardSelector, 
-     onFooterSelector, onSocialAccountSelector, onTermsAndServiceSelector,
-     onPrivacyPolicySelector
+     onAppUrlSelector, onTeamCardSelector, onSingleTeamCardSelector,
+     onTeamCardBackGroundSelector,
+     onFooterSelector, onSocialAccountSelector, 
+    onTermsAndServiceSelector, onPrivacyPolicySelector
 
      };

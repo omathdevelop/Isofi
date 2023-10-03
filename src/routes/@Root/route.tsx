@@ -12,7 +12,7 @@ import SingleColumnModule from '../../components/@SingleColumn/component';
 import CardModule from '../../components/@Card/component';
 import MultipleColumnModule from '../../components/@MultipleColumn/component';
 import { ImageModule } from '../../components/@Background/component';
-import TeamCardModule from '../../components/@TeamCard/component';
+import SingleTeamCardModule from '../../components/@SingleTeamCard/component';
 import TeamModule from '../../components/@Team/component';
 import FooterModule from '../../components/@Footer/component';
 const Root = () => {
@@ -31,7 +31,7 @@ const Root = () => {
           <SingleColumnModule />
           <MultipleColumnModule  />
           <ImageModule />
-          <TeamCardModule isMobile={isMobile}/>
+          <SingleTeamCardModule isMobile={isMobile}/>
           <TeamModule />
           {isMenuOpen  && <MobileMenu message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>}
            {/* <BlankFillModule/> */}

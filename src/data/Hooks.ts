@@ -7,11 +7,12 @@ import {
   onTeamCardData, onHubSpotFormData,
   onAppUrlData, onFooterData,
   onSocialAccountData, onTermsAndServiceData,
-  onPrivacyPolicyData
+  onPrivacyPolicyData,
+  onSingleTeamCardData
 } from './Action';
 import {
   setNavigation, setFirstHero, setSecondHero, setSingleColumn, setMultipleColumn,
-  setImageModule, setTeamCard, setHubSpotForm, setAppUrl, setFooter, setSocialAccount,
+  setImageModule, setTeamCard, setSingleTeamCard, setHubSpotForm, setAppUrl, setFooter, setSocialAccount,
   setTermsAndService, setPrivacyPolicy
 } from '../context/@redux/@slices/slices';
 
@@ -111,7 +112,19 @@ const useTeamCard = () => {
 
   }, [dispatch])
 };
+const useSingleTeamCard = () => {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    onSingleTeamCardData().then((data) => {
+      if (!data) return;
+      dispatch(setSingleTeamCard([data]));
+      console.log(data)
+    }).catch((error: Error) => {
+      if (error instanceof Error) return error.message
+    });
 
+  }, [dispatch])
+};
 const useHubSpotForm = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
@@ -203,7 +216,7 @@ export {
   useTeamCard, useHubSpotForm,
   useAppUrl, useFooter,
   useSocialAccount, useTermsAndService,
-  usePrivacyPolicy
+  usePrivacyPolicy, useSingleTeamCard
 }
 
 

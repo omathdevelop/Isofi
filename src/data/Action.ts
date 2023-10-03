@@ -1,6 +1,6 @@
 import { SanityConfig } from "../configs/SanityConfig";
 import Query from "./Queries";
-import type { AppUrlDataState, FirstHeroDataState, FooterDataState, HubSpotFormDataState, ImageModuleDataState, NaviGationDataState, PrivacyPolicyDataState, SecondHeroDataState, SingleColumnDataState, SocialAccountDataState, TermsAndServiceDataState } from "./Types";
+import type { AppUrlDataState, FirstHeroDataState, FooterDataState, HubSpotFormDataState, ImageModuleDataState, MultipleColumnDataState, NaviGationDataState, PrivacyPolicyDataState, SecondHeroDataState, SingleColumnDataState, SocialAccountDataState, TeamCardDataState, TermsAndServiceDataState } from "./Types";
 const onNaviGationData = async () => {
     const data = await SanityConfig.fetch(Query.naviagtion).then((data: NaviGationDataState) => {
         return data;
@@ -38,7 +38,7 @@ const onSingleColumnData = async () => {
     return data;
 };
 const onMultipleColumnData = async () => {
-    const data = await SanityConfig.fetch(Query.multipleColumn).then((data:object) => {
+    const data = await SanityConfig.fetch(Query.multipleColumn).then((data:MultipleColumnDataState<string>) => {
         if(!data) return;
         return data
     }).catch(() => {
@@ -56,7 +56,16 @@ const onImageModuleData = async () => {
     return data;
 };
 const onTeamCardData = async () => {
-    const data = await SanityConfig.fetch(Query.teamCard).then((data:Array<string>) => {
+    const data = await SanityConfig.fetch(Query.teamCard).then((data:TeamCardDataState<string, boolean>[]) => {
+        if(!data) return;
+        return data
+    }).catch(() => {
+        console.log('*******Error******')
+    });
+    return data;
+};
+const onSingleTeamCardData = async () => {
+    const data = await SanityConfig.fetch(Query.singleTeamCard).then((data:TeamCardDataState<string, boolean>) => {
         if(!data) return;
         return data
     }).catch(() => {
@@ -127,6 +136,6 @@ export {
     onTeamCardData, onHubSpotFormData,
     onAppUrlData, onFooterData,
     onSocialAccountData, onTermsAndServiceData,
-    onPrivacyPolicyData 
+    onPrivacyPolicyData, onSingleTeamCardData
     };
 

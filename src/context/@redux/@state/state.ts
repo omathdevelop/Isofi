@@ -6,6 +6,10 @@ type StateMangement = {
 };
 type NaviGationState = {
     navigation: []
+    isMenuItem:boolean
+    menuItem:[]
+    buttonText:object
+    logo:string
 }
 type FirstHeroState = {
     firstHero: []
@@ -24,6 +28,9 @@ type ImageModuleState = {
 }
 type TeamCardState = {
     teamCard: []
+    singleTeamCard: []
+    teamCardBackGround:string
+
 }
 type HubSpotFormState = {
     hubSpotForm: []
@@ -50,7 +57,11 @@ const INITIAL_STATE_MANAGEMENT: StateMangement = {
     isViewAnimate: false,
 };
 const INITIAL_NAVIGATION_STATE:NaviGationState = {
-    navigation:[]
+    navigation:[],
+    isMenuItem:false,
+    menuItem:[],
+    buttonText:{},
+    logo:''
 };
 const INITIAL_FIRST_HERO_STATE:FirstHeroState = {
     firstHero:[]
@@ -68,7 +79,9 @@ const INITIAL_IMAGE_MODULE_STATE:ImageModuleState = {
     imageModule:[]
 };
 const INITIAL_TEAM_CARD_STATE:TeamCardState = {
-    teamCard:[]
+    teamCard:[],
+    singleTeamCard:[],
+    teamCardBackGround:''
 };
 const INITIAL_HUBSPOT_FORM_STATE:HubSpotFormState = {
     hubSpotForm:[]
@@ -94,5 +107,5 @@ export {
     INITIAL_STATE_MANAGEMENT, INITIAL_NAVIGATION_STATE, INITIAL_FIRST_HERO_STATE,
     INITIAL_SECOND_HERO_STATE, INITIAL_SINGLE_COLUMN_STATE, INITIAL_MULTIPLE_COLUMN_STATE, 
     INITIAL_IMAGE_MODULE_STATE, INITIAL_TEAM_CARD_STATE, INITIAL_HUBSPOT_FORM_STATE, INITIAL_APP_URL_STATE,
-    INITIAL_SOCIAL_ACCOUNT_STATE, INITIAL_FOOTER_STATE, INITIAL_TERMS_AND_SERVICE_STATE, INITIAL_PRIVACY_POLICY_STATE
+    INITIAL_SOCIAL_ACCOUNT_STATE, INITIAL_FOOTER_STATE, INITIAL_TERMS_AND_SERVICE_STATE, INITIAL_PRIVACY_POLICY_STATE,
  };

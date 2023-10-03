@@ -1,28 +1,15 @@
-import BackGroundTexture from '../../assets/background-texture.png';
+import { useSelector } from 'react-redux';
+import { onTeamCardBackGroundSelector } from '../../context/@redux/@selector/selector';
 import { TeamImageView } from "../../design/@ImageView/component";
 import { AnyView } from '../../design/@AppView/component';
-import TeamCard from '../@TeamCard/component';
-
-const Team = ({isMobile}:{isMobile?:boolean}):React.JSX.Element => {
-
+import { TeamCard } from './@Shared/component';
+const Team = ():React.JSX.Element => {
+const teamCardBackGroundImage = useSelector(onTeamCardBackGroundSelector);
 return (<>
    {/* {isMobile  &&  */}
-   <TeamImageView setTeamImageUrl={BackGroundTexture}>
+   <TeamImageView setTeamImageUrl={teamCardBackGroundImage}>
     <AnyView className={'team-card'}>
    <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-   <TeamCard/>
-
-
     </AnyView>
    </TeamImageView>  
    {/* } */}

@@ -1,14 +1,25 @@
 import {motion} from 'framer-motion';
-import { AnyView, BreakView, TextView } from "../../../design/@AppView/component"
-const Content = () => (
-    <>
-    <AnyView className={'content'}>
-        <TextView>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Earum soluta officia et, suscipit necessitatibus minus iste illo <BreakView/> voluptatibus voluptate aut reiciendis vel deleniti numquam aliquam ex esse enim debitis commodi.</TextView>
+import { useSelector } from 'react-redux';
+import { PortableText } from '@portabletext/react';
+import { onFooterSelector } from '../../../context/@redux/@selector/selector';
+import { AnyView } from "../../../design/@AppView/component"
+import type { FooterDataState } from '../../../data/Types';
+const Content = () => {
+    const footerData = useSelector(onFooterSelector);
+ return (<>
+ {footerData.map((state:FooterDataState<string, []>) => {
+  const {_id, content }= state;
+    return <AnyView key={_id} className={'content'}>
+        <PortableText value={content[0]}/>
+        <PortableText value={content[1]}/>
     </AnyView>
+ })}
     </>
-);
+)};
 
+
+{/* <TextView>Lorem ipsum dolor sit amet consectetur adipisicing elit.  */}
+            {/* Earum soluta officia et, suscipit necessitatibus minus iste illo <BreakView/> voluptatibus voluptate aut reiciendis vel deleniti numquam aliquam ex esse enim debitis commodi.</TextView> */}
 const Email = () => {
     return (
         <motion.svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
