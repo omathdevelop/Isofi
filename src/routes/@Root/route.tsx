@@ -33,7 +33,7 @@ const Root = () => {
           <ImageModule />
           <SingleTeamCardModule isMobile={isMobile}/>
           <TeamModule />
-          {isMenuOpen  && <MobileMenu message={'Assuming, we have the "app link" already! 🤩 going to "Isofi-CMS in ....."'}/>}
+          {isMenuOpen  && <MobileMenu />}
            {/* <BlankFillModule/> */}
           {/* {isSmall  && !isMedium && <BlankFillModule/>} */}
           <Outlet/>
