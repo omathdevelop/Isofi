@@ -6,6 +6,7 @@ import {
   } from '../../../context/@redux/@selector/selector';
 import useViewAnimate from '../../../hooks/useViewAnimate';
 import Logo from '../../@Logo/component';
+import { container, onItem } from '../../../constants/variants';
 import { PlayListButtonVariant } from '../../../design/@ButtonView/component';
 import { MobileHeaderView, MobileNavView } from '../../../design/@NavigationView/component';
 import { AnyView, TextView, UnorderView, ListView } from '../../../design/@AppView/component';
@@ -43,11 +44,11 @@ const MobileMenu = ({message}: {message:string}) => {
         <>
         {menuItem.map((state:MenuItemTyping<string>) => {
         const { _key, menuOne, menuTwo, menuThree, menuFour} = state;
-        return ( <UnorderView key={_key} setOrder={'desktop'}>
-                <ListView><TextView className={'items'}>{menuOne}</TextView></ListView>
-                <ListView><TextView className={'items'}>{menuTwo}</TextView></ListView>
-                <ListView><TextView className={'items'}>{menuThree}</TextView></ListView>
-                <ListView><TextView className={'items'}>{menuFour}</TextView></ListView>
+        return ( <UnorderView initial={'hidden'} animate={'show'} variants={container} key={_key} setOrder={'desktop'}>
+                <ListView variants={onItem}><TextView className={'items'}>{menuOne}</TextView></ListView>
+                <ListView variants={onItem}><TextView className={'items'}>{menuTwo}</TextView></ListView>
+                <ListView variants={onItem}><TextView className={'items'}>{menuThree}</TextView></ListView>
+                <ListView variants={onItem}><TextView className={'items'}>{menuFour}</TextView></ListView>
                </UnorderView>
 
         )

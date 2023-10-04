@@ -2,11 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import RootRoute from './routes/@Root/route';
 import PrivacyPolicyRoute from './routes/@PrivacyPolicy/component';
 import TermsAndServiceRoute from './routes/@TermsAndService/component';
+import useCache from './hooks/useCache';
 import {
     useNaviGation, useMultipleColumn, useSingleColumn,
     useHubSpotForm, useAppUrl, useTeamCard, useTermsAndService,
     useImageModule, useFooter, useFirstHero, useSecondHero,
-    usePrivacyPolicy, useSocialAccount, useSingleTeamCard
+    usePrivacyPolicy, useSocialAccount, useSingleTeamCard, useTeamCardBackGroundImage
 } from './data/Hooks';
 const App = () => {
     useNaviGation();
@@ -19,10 +20,12 @@ const App = () => {
     useImageModule();
     useTeamCard();
     useSingleTeamCard();
+    useTeamCardBackGroundImage();
     useFooter();
     useSocialAccount();
     useTermsAndService();
     usePrivacyPolicy();
+    useCache();
     return (
         <Routes>
             <Route>

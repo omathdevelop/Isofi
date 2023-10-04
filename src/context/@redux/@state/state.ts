@@ -29,7 +29,7 @@ type ImageModuleState = {
 type TeamCardState = {
     teamCard: []
     singleTeamCard: []
-    teamCardBackGround:string
+    teamCardBackGround:[]
 
 }
 type HubSpotFormState = {
@@ -81,7 +81,7 @@ const INITIAL_IMAGE_MODULE_STATE:ImageModuleState = {
 const INITIAL_TEAM_CARD_STATE:TeamCardState = {
     teamCard:[],
     singleTeamCard:[],
-    teamCardBackGround:''
+    teamCardBackGround:[]
 };
 const INITIAL_HUBSPOT_FORM_STATE:HubSpotFormState = {
     hubSpotForm:[]

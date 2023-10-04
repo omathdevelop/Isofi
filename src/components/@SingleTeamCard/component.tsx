@@ -19,7 +19,11 @@ const SingleTeamCard = ({isMobile}:{isMobile?:boolean}) => {
              return ( 
 
           <TopTeamView key={_id} setDevice={'mobile'}>
-        <TeamView setView={'Team'}>
+        <TeamView 
+         initial={{opacity: 0, x: 200}}
+         whileInView={{opacity:1, x:[0, 40, 0, 40, 0]}}
+         transition={{duration:0.80, delay:0.40}}
+         setView={'Team'}>
             <TeamPhoto className={'team-photo'} alt={teamPhotoAlt} src={photo}/>
             <AnyView className={'team-attribute'}>
                     <TextView className={'team-name'}>{name}</TextView>

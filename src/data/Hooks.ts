@@ -8,12 +8,12 @@ import {
   onAppUrlData, onFooterData,
   onSocialAccountData, onTermsAndServiceData,
   onPrivacyPolicyData,
-  onSingleTeamCardData
+  onSingleTeamCardData, onTeamCardBackGroundData
 } from './Action';
 import {
   setNavigation, setFirstHero, setSecondHero, setSingleColumn, setMultipleColumn,
   setImageModule, setTeamCard, setSingleTeamCard, setHubSpotForm, setAppUrl, setFooter, setSocialAccount,
-  setTermsAndService, setPrivacyPolicy
+  setTermsAndService, setPrivacyPolicy, setTeamCardBackGround
 } from '../context/@redux/@slices/slices';
 
 const useNaviGation = () => {
@@ -125,6 +125,19 @@ const useSingleTeamCard = () => {
 
   }, [dispatch])
 };
+const useTeamCardBackGroundImage = () => {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    onTeamCardBackGroundData().then((data) => {
+      if (!data) return;
+      dispatch(setTeamCardBackGround([data]));
+      console.log(data)
+    }).catch((error: Error) => {
+      if (error instanceof Error) return error.message
+    });
+
+  }, [dispatch])
+};
 const useHubSpotForm = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
@@ -216,7 +229,7 @@ export {
   useTeamCard, useHubSpotForm,
   useAppUrl, useFooter,
   useSocialAccount, useTermsAndService,
-  usePrivacyPolicy, useSingleTeamCard
+  usePrivacyPolicy, useSingleTeamCard, useTeamCardBackGroundImage
 }
 
 
