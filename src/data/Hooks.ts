@@ -22,7 +22,7 @@ const useNaviGation = () => {
     onNaviGationData().then((data) => {
       if (!data) return;
       dispatch(setNavigation([data]))
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
       // console.log(error);
@@ -37,7 +37,7 @@ const useFirstHero = () => {
     onFirstHeroData().then((data) => {
       if (!data) return;
       dispatch(setFirstHero([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -51,7 +51,7 @@ const useSecondHero = () => {
     onSecondHeroData().then((data) => {
       if (!data) return;
       dispatch(setSecondHero([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
       console.log('*******ERROR******** `@useSecondHero`');
@@ -65,7 +65,7 @@ const useSingleColumn = () => {
     onSingleColumnData().then((data) => {
       if (!data) return;
       dispatch(setSingleColumn([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -78,7 +78,7 @@ const useMultipleColumn = () => {
     onMultipleColumnData().then((data) => {
       if (!data) return;
       dispatch(setMultipleColumn([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -91,7 +91,7 @@ const useImageModule = () => {
     onImageModuleData().then((data) => {
       if (!data) return;
       dispatch(setImageModule([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -105,7 +105,7 @@ const useTeamCard = () => {
     onTeamCardData().then((data) => {
       if (!data) return;
       dispatch(setTeamCard(data));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -118,7 +118,7 @@ const useSingleTeamCard = () => {
     onSingleTeamCardData().then((data) => {
       if (!data) return;
       dispatch(setSingleTeamCard([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -131,7 +131,7 @@ const useTeamCardBackGroundImage = () => {
     onTeamCardBackGroundData().then((data) => {
       if (!data) return;
       dispatch(setTeamCardBackGround([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -144,7 +144,7 @@ const useHubSpotForm = () => {
     onHubSpotFormData().then((data) => {
       if (!data) return;
       dispatch(setHubSpotForm([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -158,7 +158,7 @@ const useAppUrl = () => {
     onAppUrlData().then((data) => {
       if (!data) return;
       dispatch(setAppUrl([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -172,7 +172,7 @@ const useFooter = () => {
     onFooterData().then((data) => {
       if (!data) return;
       dispatch(setFooter([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -186,7 +186,7 @@ const useSocialAccount = () => {
     onSocialAccountData().then((data) => {
       if (!data) return;
       dispatch(setSocialAccount([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -200,7 +200,7 @@ const useTermsAndService = () => {
     onTermsAndServiceData().then((data) => {
       if (!data) return;
       dispatch(setTermsAndService([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });
@@ -214,7 +214,7 @@ const usePrivacyPolicy = () => {
     onPrivacyPolicyData().then((data) => {
       if (!data) return;
       dispatch(setPrivacyPolicy([data]));
-      console.log(data)
+      
     }).catch((error: Error) => {
       if (error instanceof Error) return error.message
     });

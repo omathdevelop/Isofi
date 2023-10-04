@@ -6,7 +6,6 @@ import { TeamCard } from './@Shared/component';
 import type { TeamCardBackGroundImageDataState } from '../../data/Types';
 const Team = ():React.JSX.Element => {
 const teamCardBackGroundImageData = useSelector(onTeamCardBackGroundSelector);
-   console.log(teamCardBackGroundImageData);
 return (<>
    {teamCardBackGroundImageData.map((state:TeamCardBackGroundImageDataState<string>) => {
     const {_id, teamCardBackGround} = state;

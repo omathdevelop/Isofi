@@ -10,7 +10,6 @@ const SingleColumn = () => {
           <>
           {singleColumnData.map((state:SingleColumnDataState<string, []>) => {
            const {_id, singleColumnImage, content} = state;
-           console.log({content: content})
             return <ColumnImageView
             initial={{opacity: 0, x: 200}}
             whileInView={{opacity:1, x:[0, 40, 0, 40, 0]}}
