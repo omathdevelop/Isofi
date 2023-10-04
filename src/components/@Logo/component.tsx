@@ -25,18 +25,18 @@ const Logo = ({isFooterLogo, isMobileFooterLogo}:{isFooterLogo?:boolean, isMobil
    const onHome = ()  => navigate('/');
     if(isFooterLogo){
         return (<LogoView onClick={onHome}>
-            <TextView className={'logo'} style={FooterLogoStyles}>{logo}</TextView>
+            <TextView className={'logo animate__animated animate__bounce'} style={FooterLogoStyles}>{logo}</TextView>
             </LogoView>
             )
     }
     if(isMobileFooterLogo){
         return (<LogoView onClick={onHome}>
-            <TextView className={'logo'} style={MobileFooterLogoStyles}>{logo}</TextView>
+            <TextView className={'logo animate__animated animate__bounce'} style={MobileFooterLogoStyles}>{logo}</TextView>
             </LogoView>
             )
     }
     return (<LogoView onClick={onHome}>
-<TextView className={'logo'} >{logo}</TextView>
+<TextView className={'logo animate__animated animate__bounce'} >{logo}</TextView>
 </LogoView>)
 }
 

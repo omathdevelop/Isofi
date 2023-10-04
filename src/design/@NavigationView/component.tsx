@@ -12,10 +12,10 @@ const HeaderView = styled(motion.header)`
 `
 const MobileHeaderView = styled(motion.header)`
 position: absolute;
-top:5vh;
-left:3rem;
+top:6rem;
+left:5rem;
 z-index: 1;
-width: 20rem;
+width: 15rem;
 height: auto;
   padding: 1.2rem;
   color: var(--theme-text);

@@ -1,32 +1,19 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { PortableText } from '@portabletext/react';
-import { setTeamCardBackGround } from '../../../context/@redux/@slices/slices';
 import { onTeamCardSelector, onTeamCardBackGroundSelector } from '../../../context/@redux/@selector/selector';
 import { TopTeamView, TeamView, TeamPhoto } from '../../../design/@TeamCardView/component';
 import { AnyView, TextView } from '../../../design/@AppView/component';
 import { TeamImageView } from '../../../design/@ImageView/component';
-import type { TeamCardDataState } from '../../../data/Types';
-import { useEffect } from 'react';
+import type { TeamCardDataState, TeamCardBackGroundImageDataState } from '../../../data/Types';
 const TeamCard = () => {
     const teamCardData = useSelector(onTeamCardSelector);
-    const dispatch = useDispatch();
-    useEffect(() => {
-      teamCardData.map((state:TeamCardDataState<string, boolean>) => {
-        const {
-           teamCardBackGround
-         } = state;
-
-          dispatch(setTeamCardBackGround(teamCardBackGround));
-      })
-    }, [teamCardData, dispatch])
     return  (<>
     {teamCardData.map((state:TeamCardDataState<string, boolean>) => {
       const {
        _id, name, tagline,
        photo, teamPhotoAlt, description
       } = state;
-     return (
-       <TopTeamView key={_id} setDevice={'desktop'}>
+     return ( <TopTeamView key={_id} setDevice={'desktop'}>
        <TeamView setView={'Team'}>
            <TeamPhoto className={'team-photo'} alt={teamPhotoAlt} src={photo}/>
            <AnyView>
@@ -44,12 +31,17 @@ const TeamCard = () => {
     </>)
 }
 const MobileTeamCard = () => {
-  const teamCardBackGroundImage = useSelector(onTeamCardBackGroundSelector);
+  const teamCardBackGroundImageData = useSelector(onTeamCardBackGroundSelector);
+
     return (
         <>
-       <TeamImageView setTeamImageUrl={teamCardBackGroundImage}>
+         {teamCardBackGroundImageData.map((state:TeamCardBackGroundImageDataState<string>) => {
+          const {_id, teamCardBackGround} = state;
+
+          return <TeamImageView key={_id} setTeamImageUrl={teamCardBackGround}>
                 <TeamCard/>
             </TeamImageView>
+         })}
            
 
         </>

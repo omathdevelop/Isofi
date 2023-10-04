@@ -11,6 +11,7 @@ import Button from "../@Button/component";
 import Logo from "../@Logo/component";
 import { Menu } from "./@Shared/component";
 import { BUTTON_TYPE_CLASSES } from "../../constants/button";
+import { container, onItem } from "../../constants/variants";
 import type { NaviGationDataState, MenuItemTyping, AppUrlDataState, HubSpotFormDataState } from "../../data/Types";
 const NaviGation = () => {
     const dispatch = useDispatch();
@@ -39,11 +40,11 @@ const NaviGation = () => {
                     <> 
                     {menuItem.map((items:MenuItemTyping<string>) => {
                       const { _key, menuOne, menuTwo, menuThree, menuFour} = items;
-                        return (<UnorderView key={_key} setOrder={'mobile'}>
-                        <ListView><TextView className={'items'}>{menuOne}</TextView></ListView>
-                        <ListView><TextView className={'items'}>{menuTwo}</TextView></ListView>
-                        <ListView><TextView className={'items'}>{menuThree}</TextView></ListView>
-                        <ListView><TextView className={'items'}>{menuFour}</TextView></ListView>
+                        return (<UnorderView initial={'hidden'} animate={'show'} variants={container} key={_key} setOrder={'mobile'}>
+                        <ListView variants={onItem}><TextView  className={'items'}>{menuOne}</TextView></ListView>
+                        <ListView variants={onItem}><TextView className={'items'}>{menuTwo}</TextView></ListView>
+                        <ListView variants={onItem}><TextView className={'items'}>{menuThree}</TextView></ListView>
+                        <ListView variants={onItem}><TextView className={'items'}>{menuFour}</TextView></ListView>
                         </UnorderView>
                         )
                     })}

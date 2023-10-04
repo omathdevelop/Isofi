@@ -8,7 +8,11 @@ const Card = () =>{
   return (<>
         
 
-   <CardView>
+   <CardView
+    initial={{opacity: 0, x: 200}}
+    whileInView={{opacity:1, x:[0, 40, 0, 40, 0]}}
+    transition={{duration:0.80, delay:0.40}}
+   >
       <AnyView className={'content'}>
           {cardData.map((state:SecondHeroDataState<string>) => {
             const {_id, firstText, secondText, thirdText} = state;

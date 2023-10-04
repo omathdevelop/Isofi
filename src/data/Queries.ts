@@ -56,7 +56,7 @@ const Query = {
         "image": image.asset->url,
         "alt":image.alt
     }`,
-    teamCard: `*[ _type == 'teamCard'] {
+    teamCard: `*[ _type == 'teamCard' && isSingleTeam != true] {
         _id,
         description,
         isSingleTeam,
@@ -66,6 +66,10 @@ const Query = {
         name,
         "teamCardBackGround": teamCardBackGround.asset->url,
         "teamCardBackGroundAlt":teamCardBackGround.teamCardBackGroundAlt
+    }`,
+    teamCardBackGroundImage: `*[ _type == 'teamCardBackGroundImage'][0] {
+        _id,
+        "teamCardBackGround":teamCardBackGround.asset->url
     }`,
     singleTeamCard: `*[ _type == 'teamCard'  && isSingleTeam == true][0] {
         _id,

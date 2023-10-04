@@ -102,6 +102,10 @@ type MultipleColumnDataState<T> = {
     secondColumnImageOne:T
     secondColumnImageTwo:T
 }
+type TeamCardBackGroundImageDataState<T> = {
+    _id:T
+    teamCardBackGround:T
+}
 
 
 
@@ -112,5 +116,6 @@ export type {
      FooterDataState, HubSpotFormDataState, 
      AppUrlDataState, TermsAndServiceDataState,
      PrivacyPolicyDataState, TeamCardDataState, MultipleColumnDataState,
+     TeamCardBackGroundImageDataState,
      MenuItemTyping
      };

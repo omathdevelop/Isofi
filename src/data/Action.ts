@@ -1,6 +1,6 @@
 import { SanityConfig } from "../configs/SanityConfig";
 import Query from "./Queries";
-import type { AppUrlDataState, FirstHeroDataState, FooterDataState, HubSpotFormDataState, ImageModuleDataState, MultipleColumnDataState, NaviGationDataState, PrivacyPolicyDataState, SecondHeroDataState, SingleColumnDataState, SocialAccountDataState, TeamCardDataState, TermsAndServiceDataState } from "./Types";
+import type { AppUrlDataState, FirstHeroDataState, FooterDataState, HubSpotFormDataState, ImageModuleDataState, MultipleColumnDataState, NaviGationDataState, PrivacyPolicyDataState, SecondHeroDataState, SingleColumnDataState, SocialAccountDataState, TeamCardBackGroundImageDataState, TeamCardDataState, TermsAndServiceDataState } from "./Types";
 const onNaviGationData = async () => {
     const data = await SanityConfig.fetch(Query.naviagtion).then((data: NaviGationDataState) => {
         return data;
@@ -73,6 +73,15 @@ const onSingleTeamCardData = async () => {
     });
     return data;
 };
+const onTeamCardBackGroundData = async () => {
+    const data = await SanityConfig.fetch(Query.teamCardBackGroundImage).then((data:TeamCardBackGroundImageDataState<string>) => {
+        if(!data) return;
+        return data
+    }).catch(() => {
+        console.log('*******Error******')
+    });
+    return data;
+};
 const onHubSpotFormData = async () => {
     const data = await SanityConfig.fetch(Query.hubSpotForm).then((data:HubSpotFormDataState<string>) => {
         if(!data) return;
@@ -136,6 +145,7 @@ export {
     onTeamCardData, onHubSpotFormData,
     onAppUrlData, onFooterData,
     onSocialAccountData, onTermsAndServiceData,
-    onPrivacyPolicyData, onSingleTeamCardData
+    onPrivacyPolicyData, onSingleTeamCardData,
+    onTeamCardBackGroundData
     };
 
